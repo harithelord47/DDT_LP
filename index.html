@@ -8,6 +8,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="shortcut icon" href="./assets/DuoDevLogo.ico" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- Include Font Awesome for Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -32,83 +34,70 @@
 </head>
 
 <body class="overflow-x-hidden">
-  <!-- Campign Bar -->
-  <div class="bg-sky-900 text-white text-xs sm:text-sm text-center p-2">
-    <p>Building Smart Web Solutions for Your Business Growth !</p>
-  </div>
 
-  <!-- Navbar Section -->
-  <div class="bg-gradient-to-b from-blue-500 to-sky-300 min-h-screen sm:rounded-br-[30%_50%]">
-    <header class="flex flex-wrap items-center justify-between px-4 py-4 md:px-8">
-      <div class="flex items-center">
-        <div>
-          <img src="./assets/img/DuoDevLogo.webp" class="h-14 w-14 rounded-lg">
+  <!-- Hero Section -->
+  <section>
+    <!-- Campaign Bar -->
+    <div class="bg-sky-900 text-white text-xs sm:text-sm text-center p-2">
+      <p>Building Smart Web Solutions for Your Business Growth!</p>
+    </div>
+
+    <!-- Navbar Section -->
+    <div class="bg-gradient-to-b from-blue-500 to-sky-300 min-h-screen sm:rounded-br-[30%_50%]">
+      <header class="flex items-center justify-between px-4 py-4 md:px-8">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="./assets/img/DuoDevLogo.webp" class="h-14 w-14 rounded-lg" alt="Duo Dev Logo">
+          <h1 class="text-white text-xl font-bold ml-2 px-2 uppercase"><span>D</span>uo Dev <br> Technologies</h1>
         </div>
-      </div>
 
-      <div class="md:bg-transparent">
-        <!-- Navbar Container -->
-        <div class="container mx-auto flex items-center justify-between px-6 py-4">
-
-
-          <!-- Hamburger Menu (Mobile) -->
-          <button id="menu-toggle" class="block md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
-            <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
-
-          <!-- Navigation Menu -->
-          <nav id="nav-menu" class="hidden md:flex flex-col md:flex-row md:space-x-12 text-white font-medium">
-            <ul class="flex flex-col md:flex-row md:space-x-12 text-center md:text-left space-y-2 md:space-y-0">
-              <li><a href="#" class="hover:text-gray-300">Home</a></li>
-              <li><a href="#" class="hover:text-gray-300">About Us</a></li>
-              <li><a href="#" class="hover:text-gray-300">Services</a></li>
-              <li><a href="#" class="hover:text-gray-300">Products</a></li>
-              <li><a href="#" class="hover:text-gray-300">Clients</a></li>
-              <li><a href="#" class="hover:text-gray-300">Blogs</a></li>
-              <li><a href="#" class="hover:text-gray-300">Careers</a></li>
-              <li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <!-- JavaScript -->
-      <script>
-        const menuToggle = document.getElementById("menu-toggle");
-        const navMenu = document.getElementById("nav-menu");
-
-        menuToggle.addEventListener("click", () => {
-          navMenu.classList.toggle("hidden");
-        });
-      </script>
-
-      <button
-        class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full flex items-center space-x-2 mt-4 md:mt-0 md:flex hidden">
-        <span>Get a Quote</span>
-        <div class="bg-black p-3 rounded-full opacity-0.2">
-          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M4.77617 0.557047L4.77635 0.556998C5.23222 0.432457 5.70713 0.651856 5.9089 1.07248L5.93124 1.12609L7.33391 4.4925L7.33398 4.49268C7.4996 4.88968 7.38539 5.34746 7.05119 5.62069C7.05118 5.62069 7.05118 5.6207 7.05117 5.6207L5.32239 7.03388L5.06356 7.24546L5.20651 7.54766C6.41652 10.1058 8.4873 12.1765 11.0454 13.3866L11.3472 13.5293L11.5589 13.2711L12.9755 11.5423L12.9756 11.5423L12.9771 11.5404C13.2458 11.2087 13.7058 11.093 14.1039 11.2591L14.1041 11.2592L17.4705 12.6618L17.4714 12.6622C17.9239 12.8495 18.1654 13.3434 18.0361 13.8167L18.036 13.8169L17.1947 16.9016C17.1947 16.9018 17.1946 16.902 17.1946 16.9022C17.0768 17.328 16.6905 17.6222 16.2533 17.6222C7.81384 17.6222 0.970835 10.7792 0.970835 2.33979C0.970835 1.90254 1.26507 1.5162 1.69097 1.39847C1.69114 1.39842 1.69132 1.39837 1.69149 1.39832L4.77617 0.557047Z"
-              stroke="white" stroke-width="0.855" />
+        <!-- Hamburger Menu (Mobile) -->
+        <button id="menu-toggle" class="block md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+          <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
-        </div>
-      </button>
-    </header>
+        </button>
 
-    <!-- Hero Section -->
-    <div class="w-full flex items-center justify-center text-center text-white px-4 space-x-18 ">
-      <div class="w-full sm:w-1/2">
-        <h3 class="text-lg">Your Vision, Your Website, Our Expertise</h3>
-        <h1 class="text-5xl font-bold mt-2 text-sky-900">Boost Your Success with<br>Duo Dev Technologies!</h1>
-      </div>
-      <div class="w-1/2">
-        <img src="./assets/img/hero.png" alt="" class="lg:w-4/6 hidden sm:block">
+        <!-- Navigation Menu -->
+        <nav id="nav-menu" class="hidden md:flex flex-col md:flex-row md:space-x-12 text-white font-medium">
+          <ul class="flex flex-col md:flex-row md:space-x-12 text-center md:text-left space-y-2 md:space-y-0">
+            <li><a href="#" class="hover:text-gray-300">Home</a></li>
+            <li><a href="#" class="hover:text-gray-300">About Us</a></li>
+            <li><a href="#" class="hover:text-gray-300">Services</a></li>
+            <li><a href="#" class="hover:text-gray-300">Products</a></li>
+            <li><a href="#" class="hover:text-gray-300">Clients</a></li>
+            <li><a href="#" class="hover:text-gray-300">Blogs</a></li>
+            <li><a href="#" class="hover:text-gray-300">Careers</a></li>
+            <li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Get a Quote Button -->
+        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full hidden sm:flex items-center space-x-2 mt-4 md:mt-0">
+          <span>Get a Quote</span>
+          <div class="bg-black p-3 rounded-full opacity-80">
+            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.77617 0.557047L4.77635 0.556998C5.23222 0.432457 5.70713 0.651856 5.9089 1.07248L5.93124 1.12609L7.33391 4.4925L7.33398 4.49268C7.4996 4.88968 7.38539 5.34746 7.05119 5.62069C7.05118 5.62069 7.05118 5.6207 7.05117 5.6207L5.32239 7.03388L5.06356 7.24546L5.20651 7.54766C6.41652 10.1058 8.4873 12.1765 11.0454 13.3866L11.3472 13.5293L11.5589 13.2711L12.9755 11.5423L12.9756 11.5423L12.9771 11.5404C13.2458 11.2087 13.7058 11.093 14.1039 11.2591L14.1041 11.2592L17.4705 12.6618L17.4714 12.6622C17.9239 12.8495 18.1654 13.3434 18.0361 13.8167L18.036 13.8169L17.1947 16.9016C17.1947 16.9018 17.1946 16.902 17.1946 16.9022C17.0768 17.328 16.6905 17.6222 16.2533 17.6222C7.81384 17.6222 0.970835 10.7792 0.970835 2.33979C0.970835 1.90254 1.26507 1.5162 1.69097 1.39847C1.69114 1.39842 1.69132 1.39837 1.69149 1.39832L4.77617 0.557047Z" stroke="white" stroke-width="0.855" />
+            </svg>
+          </div>
+        </button>
+      </header>
+
+      <!-- Mobile Menu with Backdrop Blur -->
+      <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 text-white text-lg">
+        <button id="close-menu" class="absolute top-6 right-6 text-white text-2xl">&times;</button>
+        <a href="#" class="hover:text-gray-300">Home</a>
+        <a href="#" class="hover:text-gray-300">About Us</a>
+        <a href="#" class="hover:text-gray-300">Services</a>
+        <a href="#" class="hover:text-gray-300">Products</a>
+        <a href="#" class="hover:text-gray-300">Clients</a>
+        <a href="#" class="hover:text-gray-300">Blogs</a>
+        <a href="#" class="hover:text-gray-300">Careers</a>
+        <a href="#" class="hover:text-gray-300">Contact Us</a>
       </div>
     </div>
-  </div>
+  </section>
+
 
   <!-- Techstacks Section -->
   <div class="w-full overflow-x-hidden whitespace-nowrap my-10 p-4">
@@ -127,15 +116,15 @@
 
 
   <!-- About Us Section -->
-  <div class="flex flex-col md:flex-row items-center md:items-start w-full bg-white text-gray-800 p-6 md:p-12 mb-10">
+  <div class="flex flex-col md:flex-row items-center w-full bg-white text-gray-800 p-6 md:p-12 mb-10">
     <!-- Left Side Image -->
-    <div class="w-full md:w-1/2 flex justify-center md:justify-center mb-6 md:mb-0">
+    <div class="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
       <img src="./assets/img/Team Image.png" alt="Team" class="max-w-full h-auto rounded-lg shadow-md">
     </div>
     <!-- Right Side Content -->
     <div class="w-full md:w-1/2 px-4 md:px-8">
       <h2 class="text-3xl md:text-4xl font-bold text-center mt-8">Who <span class="text-blue-500">We</span> Are?</h2>
-      <p class="text-base md:text-lg mt-4 md:mt-6 text-justify leading-relaxed indent-8">
+      <p class="text-base md:text-lg mt-4 text-justify leading-relaxed indent-8">
         At Duo Dev Technologies, we are passionate creators and problem solvers committed to delivering exceptional
         digital experiences. Founded in January 2022 by two friends inspired by their love for technology, our team
         has grown into a diverse group of skilled professionals. We offer a wide range of services including web
@@ -148,180 +137,139 @@
 
 
   <!-- Services Section -->
-  <section class="">
+  <section>
     <div class="w-full bg-gray-200 text-gray-800 flex flex-col">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mt-14">Our <span class="text-blue-500">Expert
-        </span>Solutions</h2>
-      <p class="text-center mt-6 sm:mx-28">At Duo Dev Technologies, we go beyond web development to offer cutting-edge
-        products
-        designed to simplify your operations and empower your business.</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mt-14">Our <span class="text-blue-500">Expert Solutions</span></h2>
+      <p class="text-center mt-6 sm:mx-28">At Duo Dev Technologies, we go beyond web development to offer cutting-edge products designed to simplify your operations and empower your business.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-8 ml-6 mr-6 mb-20 px-4 mt-10 flex-row">
-        <!-- Single Card -->
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+        
+        <!-- Single Card Template -->
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
           <div class="p-6 text-center">
             <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
             <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
+            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and grow your business with expert support.</p>
+            <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
           </div>
         </div>
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+        <!-- Single Card Template -->
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
           <div class="p-6 text-center">
             <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
             <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
+            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and grow your business with expert support.</p>
+            <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
           </div>
         </div>
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+        <!-- Single Card Template -->
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
           <div class="p-6 text-center">
             <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
             <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
+            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and grow your business with expert support.</p>
+            <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
           </div>
         </div>
-
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+        <!-- Single Card Template -->
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
           <div class="p-6 text-center">
             <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
             <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
-          </div>
-        </div>
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
-          </div>
-        </div>
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
+            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and grow your business with expert support.</p>
+            <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ERP Section -->
-  <div class="w-full bg-black flex flex-col py-8">
-    <h2 class="text-2xl sm:text-4xl font-bold text-center text-white mt-10">Digital <span class="text-blue-500">Product</span> Solutions ?</h2>
-    <p class="text-center text-white mt-8 sm:mx-24 mb-16">At Duo Dev Technologies, we go beyond web development to offer
-      cutting-edge products designed to simplify your operations and empower your business.</p>
-    <div>
-      <h3 class="text-white font-bold text-lg sm:ml-24 sm:text-left text-center mb-4">Institutional ERP Solutions:</h3>
-      <h2 class="text-white sm:indent-20 sm:ml-24 sm:mx-28 sm:text-justify text-center mx-4">Empower your educational
-        institution with our
-        feature-rich ERP system or let us craft a customized ERP tailored to your unique needs. At Duo Dev Technologies,
-        we offer flexibility and innovation to help you achieve operational excellence.</h2>
-    </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:px-16 sm:mb-8 mt-14">
-      <!-- Card 1 -->
-      <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
-        <div class="h-56 overflow-hidden rounded-2xl">
-          <img
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="card-image" class="w-full h-full object-cover" />
+  <!-- ERP Solutions Section -->
+  <section class="bg-black py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-2xl sm:text-4xl font-bold text-white mb-8">Digital <span class="text-[#0984e2]">Product</span> Solutions ?</h2>
+      <p class="text-white mb-16 sm:mx-24">
+        At Duo Dev Technologies, we go beyond web development to offer cutting-edge products designed to simplify your operations and empower your business.
+      </p>
+      
+      <!-- ERP Description -->
+      <div class="mb-12">
+        <h3 class="text-white font-bold text-xl mb-4">Institutional ERP Solutions:</h3>
+        <p class="text-white text-lg sm:text-justify mx-4 sm:mx-28">
+          Empower your educational institution with our feature-rich ERP system or let us craft a customized ERP tailored to your unique needs. At Duo Dev Technologies, we offer flexibility and innovation to help you achieve operational excellence.
+        </p>
+      </div>
+      
+      <!-- ERP Features Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:px-16 sm:mb-8 mt-14">
+        <!-- Card 1 -->
+        <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
+          <div class="h-56 overflow-hidden rounded-2xl">
+            <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Customizable Modules" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h6 class="mb-2 text-slate-800 text-xl font-semibold text-center">Customizable Modules</h6>
+            <p class="text-slate-600 leading-normal text-justify">Whether it’s fee management, timetable creation, or library management, our ERP can be tailored to your institution’s specific workflows.</p>
+          </div>
         </div>
-        <div class="p-4">
-          <h6 class="mb-2 text-slate-800 text-xl font-semibold text-center">
-            Customizable Modules
-          </h6>
-          <p class="text-slate-600 leading-normal text-justify">
-            Whether it’s fee management, timetable creation, or library management, our ERP can be tailored to your
-            institution’s specific workflows.
+
+        <!-- Card 2 -->
+        <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
+          <div class="h-56 overflow-hidden rounded-2xl">
+            <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Automation and Efficiency" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h6 class="mb-2 text-slate-800 text-xl font-semibold text-center">Automation and Efficiency</h6>
+            <p class="text-slate-600 leading-normal text-justify">Save time and effort with automated processes for exam scheduling, grading, and notifications for students, parents, and staff.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
+          <div class="h-56 overflow-hidden rounded-2xl">
+            <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Seamless Integration" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h6 class="mb-2 text-slate-800 text-xl font-semibold text-center">Seamless Integration</h6>
+            <p class="text-slate-600 leading-normal text-justify">Easily integrate our ERP with existing tools, software, and databases to ensure smooth operations and minimal disruption.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Custom ERP Development -->
+      <div class="flex flex-col md:flex-row items-center md:items-start w-full text-white p-6 md:p-12">
+        <div class="w-full md:w-1/2 px-4 md:px-8">
+          <h3 class="font-bold text-xl mb-4">Custom ERP Development:</h3>
+          <p class="text-justify">
+            Looking for something beyond a pre-built solution? Our team is ready to design and develop a brand-new ERP tailored exclusively to your institution’s unique requirements.
           </p>
+          <ul class="list-disc ml-3 sm:ml-6 mt-6 text-justify">
+            <li class="mb-6">Collaborative Design: Work closely with our experts to define the features and functionalities you need.</li>
+            <li class="mb-6">Future-Ready Solutions: Build an ERP equipped to handle your institution’s evolving challenges.</li>
+            <li class="mb-6">On-Time Delivery: We ensure timely delivery without compromising quality.</li>
+          </ul>
+          <div>
+            <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full flex items-center space-x-2 mt-4 md:mt-0">
+              <span>Call Now</span>
+              <div class="bg-green-600 p-3 rounded-full opacity-0.2">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.77617 0.557047L4.77635 0.556998C5.23222 0.432457 5.70713 0.651856 5.9089 1.07248L5.93124 1.12609L7.33391 4.4925L7.33398 4.49268C7.4996 4.88968 7.38539 5.34746 7.05119 5.62069C7.05118 5.62069 7.05118 5.6207 7.05117 5.6207L5.32239 7.03388L5.06356 7.24546L5.20651 7.54766C6.41652 10.1058 8.4873 12.1765 11.0454 13.3866L11.3472 13.5293L11.5589 13.2711L12.9755 11.5423L12.9756 11.5423L12.9771 11.5404C13.2458 11.2087 13.7058 11.093 14.1039 11.2591L14.1041 11.2592L17.4705 12.6618L17.4714 12.6622C17.9239 12.8495 18.1654 13.3434 18.0361 13.8167L18.036 13.8169L17.1947 16.9016C17.1947 16.9018 17.1946 16.902 17.1946 16.9022C17.0768 17.328 16.6905 17.6222 16.2533 17.6222C7.81384 17.6222 0.970835 10.7792 0.970835 2.33979C0.970835 1.90254 1.26507 1.5162 1.69097 1.39847C1.69114 1.39842 1.69132 1.39837 1.69149 1.39832L4.77617 0.557047Z" stroke="black" stroke-width="0.855" />
+                </svg>
+              </div>
+            </button>
+          </div>
         </div>
-      </div>
 
-      <!-- Card 2 -->
-      <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
-        <div class="h-56 overflow-hidden rounded-2xl">
-          <img
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="card-image" class="w-full h-full object-cover" />
+        <!-- Image Section -->
+        <div class="w-full md:w-1/2 flex justify-center mx-auto md:justify-center mb-4 md:mb-0">
+          <img src="./assets/img/Team Image.png" alt="Team" class="max-w-full h-auto rounded-lg shadow-md">
         </div>
-        <div class="p-4">
-          <h6 class="mb-2 text-slate-800 text-xl font-semibold text-center">
-            Automation and Efficiency
-          </h6>
-          <p class="text-slate-600 leading-normal text-justify">
-            Save time and effort with automated processes for exam scheduling, grading, and notifications for students,
-            parents, and staff.
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
-        <div class="h-56 overflow-hidden rounded-2xl">
-          <img
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="card-image" class="w-full h-full object-cover" />
-        </div>
-        <div class="p-4">
-          <h6 class="mb-2 text-slate-800 text-xl font-semibold text-center">
-            Seamless Integration
-          </h6>
-          <p class="text-slate-600 leading-normal text-justify">
-            Easily integrate our ERP with existing tools, software, and databases to ensure smooth operations and
-            minimal disruption.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex flex-col md:flex-row items-center md:items-start w-full text-white p-6 md:p-12">
-      <!-- Right Side Content -->
-      <div class="w-full md:w-1/2 px-4 md:px-8">
-        <h3 class="font-bold text-xl mb-4">Custom ERP Development :</h3>
-        <p class="text-justify">Looking for something beyond a pre-built solution? Our team is ready to design and
-          develop a brand-new ERP tailored exclusively to your institution’s unique requirements.</p>
-
-        <ul class="list-disc ml-3 sm:ml-6 mt-6 text-justify">
-          <li class="mb-6">Collaborative Design: Work closely with our experts to define the features and
-            functionalities you need.</li>
-          <li class="mb-6">Future-Ready Solutions: Build an ERP equipped to handle your institution’s evolving
-            challenges.</li>
-          <li class="mb-6">On-Time Delivery: We ensure timely delivery without compromising quality.</li>
-        </ul>
-        <div class="bg-green-500 text-black p-2 rounded-lg text-center w-32 mt-6 mx-auto mb-6">
-          <button>Call Now</button>
-        </div>
-      </div>
-      <!-- Left Side Image -->
-      <div class="w-full md:w-1/2 flex justify-center mx-auto md:justify-center mb-4 md:mb-0">
-        <img src="./assets/img/Team Image.png" alt="Team" class="max-w-full h-auto rounded-lg shadow-md">
       </div>
     </div>
-  </div>
+  </section>
 
+
+  <!-- Clients Section -->
   <section class="bg-gray-100 py-12 my-10">
     <div class="container mx-auto px-2 lg:px-16 mb-10">
       <h2 class="text-3xl font-bold text-center mb-12">
@@ -379,59 +327,14 @@
     </div>
   </section>
 
-  <!-- Include Font Awesome for Icons -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 
-  <script>
-    const carousel = document.getElementById("carousel");
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
-    const cardWidth = 320; // Width of each card including margin
-    let scrollPosition = 0;
-
-    // Manual scrolling with buttons
-    nextBtn.addEventListener("click", () => {
-      if (scrollPosition < (carousel.scrollWidth - carousel.offsetWidth)) {
-        scrollPosition += cardWidth;
-        carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
-      } else {
-        scrollPosition = 0; // Reset to the beginning
-        carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
-      }
-    });
-
-    prevBtn.addEventListener("click", () => {
-      if (scrollPosition > 0) {
-        scrollPosition -= cardWidth;
-        carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
-      }
-    });
-
-    // Auto-scrolling feature
-    function autoScrollCarousel() {
-      if (scrollPosition < (carousel.scrollWidth - carousel.offsetWidth)) {
-        scrollPosition += cardWidth;
-      } else {
-        scrollPosition = 0; // Reset to the beginning
-      }
-      carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
-    }
-
-    // Start auto-scrolling every 3 seconds
-    const autoScrollInterval = setInterval(autoScrollCarousel, 3000);
-
-    // Pause auto-scroll on hover
-    carousel.addEventListener("mouseenter", () => clearInterval(autoScrollInterval));
-    carousel.addEventListener("mouseleave", () => setInterval(autoScrollCarousel, 3000));
-  </script>
-
-
+  <!-- Why-Choose-Us Section -->
   <section class="bg-black text-white">
     <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8 px-6 py-12 lg:px-16">
       <!-- Left Content -->
       <div class="mb-10">
         <h2 class="text-3xl font-bold mb-6 mt-6 text-center">
-          Why <span class="text-blue-500">Choose </span>Us?
+          Why <span class="text-[#0984e2]">Choose </span>Us?
         </h2>
         <p class="text-gray-300 mb-12 text-center">
           We’re not just building websites; we’re crafting digital experiences that reflect your unique vision. Here’s
@@ -440,7 +343,7 @@
         <div class="space-y-6">
           <!-- Point 1 -->
           <div class="flex items-start space-x-4">
-            <div class="text-blue-500 text-3xl mr-2">
+            <div class="text-[#0984e2] text-3xl mr-2">
               <i class="fas fa-puzzle-piece"></i>
             </div>
             <div>
@@ -452,7 +355,7 @@
           </div>
           <!-- Point 2 -->
           <div class="flex items-start space-x-4">
-            <div class="text-blue-500 text-3xl mr-3">
+            <div class="text-[#0984e2] text-3xl mr-3">
               <i class="fas fa-lightbulb"></i>
             </div>
             <div>
@@ -465,7 +368,7 @@
           </div>
           <!-- Point 3 -->
           <div class="flex items-start space-x-4">
-            <div class="text-blue-500 text-3xl">
+            <div class="text-[#0984e2] text-3xl">
               <i class="fas fa-handshake"></i>
             </div>
             <div>
@@ -477,7 +380,7 @@
           </div>
           <!-- Point 4 -->
           <div class="flex items-start space-x-4">
-            <div class="text-blue-500 text-3xl">
+            <div class="text-[#0984e2] text-3xl">
               <i class="fas fa-user-check"></i>
             </div>
             <div>
@@ -500,11 +403,9 @@
     </div>
   </section>
 
-  <!-- Include Font Awesome -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 
-
-  <div class="bg-gray-100 flex items-center justify-center">
+  <!-- Testimonials Section -->
+  <div class="bg-white flex items-center justify-center">
     <div class="w-full mt-10 max-w-4xl overflow-hidden relative">
       <h1 class="text-2xl font-bold text-center mb-2">Testimonials</h1>
       <p class="text-center mb-10">See what people are saying</p>
@@ -547,103 +448,52 @@
     </div>
   </div>
 
-  <script>
-    const carousel1 = document.getElementById("testimonialCarousel");
-    const dots = document.querySelectorAll(".dot");
-    let currentIndex = 0;
 
-    function updateCarousel() {
-      const width = carousel1.offsetWidth;
-      carousel1.style.transform = `translateX(-${currentIndex * width}px)`;
-      dots.forEach((dot, index) => {
-        dot.classList.toggle("bg-gray-800", index === currentIndex);
-        dot.classList.toggle("bg-gray-400", index !== currentIndex);
-      });
-    }
-
-    function autoScroll() {
-      currentIndex = (currentIndex + 1) % dots.length;
-      updateCarousel();
-    }
-
-    // Auto-scroll every 5 seconds
-    let interval = setInterval(autoScroll, 5000);
-
-    // Click event for navigation dots
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        clearInterval(interval); // Stop auto-scroll on user interaction
-        currentIndex = index;
-        updateCarousel();
-        interval = setInterval(autoScroll, 2000); // Restart auto-scroll
-      });
-    });
-
-    window.addEventListener("resize", updateCarousel); // Adjust carousel on window resize
-  </script>
-
-  <section class="bg-gray-100 py-16 px-6">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-20">
+  <!-- Contact-Us Section -->
+  <section class="bg-gray-200 py-20">
+    <h2 class="text-3xl font-semibold mb-16 text-center ">Feel Free To Ask Us Anything!</h2>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-44 md:gap-28 ">
       <!-- Left Section: Image -->
       <div class="flex justify-center md:justify-end">
-        <img src="./assets/img/Team Image.png" alt="Contact Illustration" class="w-3/4 md:w-full max-w-md" />
+        <img src="./assets/svg/contact_form_svg.svg" alt="Contact Illustration" class="w-full md:w-full max-w-md" />
       </div>
-
+  
       <!-- Right Section: Form -->
-      <div class="w-full md:w-4/5 lg:w-3/4 mx-auto md:mx-0">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-center md:text-left">
-          Feel Free To Ask Us Anythink!
-        </h2>
-        <form action="#" class="space-y-6">
-          <!-- Name Input -->
+      <div class="w-full md:w-4/5">
+        <form action="#" class="space-y-4 px-6">
           <div>
-            <label for="name" class="sr-only">Name</label>
-            <input type="text" id="name" placeholder="Name"
-              class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" />
+            <label for="name"><b>Name</b></label>
+            <input type="text" id="name" class="w-full border-b-2  border-black bg-gray-200 focus:border-[#0984e2] outline-none py-2 transition" />
           </div>
-
-          <!-- Phone and Email Inputs -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label for="phone" class="sr-only">Phone</label>
-              <input type="text" id="phone" placeholder="Phone"
-                class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" />
+              <label for="phone"><b>Phone</b></label>
+              <input type="text" id="phone" class="w-full border-b-2 border-black bg-gray-200 focus:border-[#0984e2] outline-none py-2 transition" />
             </div>
             <div>
-              <label for="email" class="sr-only">Email</label>
-              <input type="email" id="email" placeholder="Email"
-                class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" />
+              <label for="email"><b>Email</b></label>
+              <input type="email" id="email" class="w-full border-b-2 border-black bg-gray-200 focus:border-[#0984e2] outline-none py-2 transition" />
             </div>
           </div>
-
-          <!-- Subject Input -->
           <div>
-            <label for="subject" class="sr-only">Subject</label>
-            <input type="text" id="subject" placeholder="Subject"
-              class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" />
+            <label for="subject"><b>Subject</b></label>
+            <input type="text" id="subject" class="w-full border-b-2 border-black bg-gray-200 focus:border-[#0984e2] outline-none py-2 transition" />
+          </div>
+          <div>
+            <label for="message"><b>Message</b></label>
+            <textarea id="message" rows="2" class="w-full border-b-2 border-black bg-gray-200 focus:border-[#0984e2] outline-none py-2 transition"></textarea>
           </div>
 
-          <!-- Message Input -->
-          <div>
-            <label for="message" class="sr-only">Message</label>
-            <textarea id="message" placeholder="Message" rows="4"
-              class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2"></textarea>
-          </div>
-
-          <!-- Submit Button -->
+          <!-- Button -->
           <div class="flex justify-center md:justify-start">
-            <button type="submit"
-              class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition w-full md:w-auto">
-              Send Message
-            </button>
+            <button type="submit" class="w-full bg-[#0984e2] text-white px-10 py-4 rounded-full hover:bg-blue-600 transition">Send Message</button>
           </div>
         </form>
       </div>
     </div>
   </section>
 
-
-
+  
   <!-- Footer Section -->
   <footer class="bg-black text-white w-full sm:p-6">
     <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -662,8 +512,8 @@
           Thudupathi, Perundurai, Tamil Nadu - 638057
         </address>
         <!-- <div class="mt-6">
-        <img src="assets/img/DuoDevLogo.png" alt="MSME Logo" class="h-12" />
-      </div> -->
+          <img src="assets/img/DuoDevLogo.png" alt="MSME Logo" class="h-12" />
+        </div> -->
       </div>
 
       <!-- Links Section -->
@@ -724,5 +574,29 @@
   </footer>
 
 </body>
+
+<!-- JavaScript for Navbar Toggle -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenu = document.getElementById("close-menu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.remove("hidden");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+
+    // Close menu if clicking outside the menu area
+    mobileMenu.addEventListener("click", (event) => {
+      if (event.target === mobileMenu) {
+        mobileMenu.classList.add("hidden");
+      }
+    });
+  });
+</script>
 
 </html>
