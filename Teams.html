@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team</title>
+  <link rel="shortcut icon" href="./assets/DuoDevLogo.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- Include Font Awesome for Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .gradient-bg {
+        background: linear-gradient(135deg, #2196F3 0%, #A4CAFE 100%);
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="gradient-bg min-h-screen flex flex-col items-center justify-center text-white">
+  
+    <!-- Navbar Section -->
+   <div class="sticky top-0 z-50">
+    <header class="flex items-center space-x-20 px-4 py-4 md:px-8">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="./assets/img/DuoDevLogo.webp" class="h-14 w-14 rounded-lg" alt="Duo Dev Logo">
+        <h1 class="text-white text-xl font-bold ml-2 px-2 uppercase"><span>D</span>uo Dev <br> Technologies</h1>
+      </div>
+
+      <!-- Hamburger Menu (Mobile) -->
+      <button id="menu-toggle" class="block md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+        <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+
+      <!-- Navigation Menu -->
+      <nav id="nav-menu" class="hidden md:flex flex-col md:flex-row md:space-x-12 text-white font-medium">
+        <ul class="flex flex-col md:flex-row md:space-x-12 text-center md:text-left space-y-2 md:space-y-0">
+          <li><a href="#" class="hover:text-blue-700">Home</a></li>
+          <li><a href="#" class="hover:text-blue-700">About Us</a></li>
+          <li><a href="#" class="hover:text-blue-700">Services</a></li>
+          <li><a href="#" class="hover:text-blue-700">Products</a></li>
+          <li><a href="#" class="hover:text-blue-700">Clients</a></li>
+          <li><a href="#" class="hover:text-blue-700">Blogs</a></li>
+          <li><a href="#" class="hover:text-blue-700">Careers</a></li>
+          <li><a href="#" class="hover:text-blue-700">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Get a Quote Button -->
+      <button class="bg-gray-100 hover:bg-green-400 hover:text-white text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full hidden sm:flex items-center space-x-2 mt-4 md:mt-0">
+        <span>Get a Quote</span>
+        <div class="bg-black p-3 rounded-full opacity-80">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.77617 0.557047L4.77635 0.556998C5.23222 0.432457 5.70713 0.651856 5.9089 1.07248L5.93124 1.12609L7.33391 4.4925L7.33398 4.49268C7.4996 4.88968 7.38539 5.34746 7.05119 5.62069C7.05118 5.62069 7.05118 5.6207 7.05117 5.6207L5.32239 7.03388L5.06356 7.24546L5.20651 7.54766C6.41652 10.1058 8.4873 12.1765 11.0454 13.3866L11.3472 13.5293L11.5589 13.2711L12.9755 11.5423L12.9756 11.5423L12.9771 11.5404C13.2458 11.2087 13.7058 11.093 14.1039 11.2591L14.1041 11.2592L17.4705 12.6618L17.4714 12.6622C17.9239 12.8495 18.1654 13.3434 18.0361 13.8167L18.036 13.8169L17.1947 16.9016C17.1947 16.9018 17.1946 16.902 17.1946 16.9022C17.0768 17.328 16.6905 17.6222 16.2533 17.6222C7.81384 17.6222 0.970835 10.7792 0.970835 2.33979C0.970835 1.90254 1.26507 1.5162 1.69097 1.39847C1.69114 1.39842 1.69132 1.39837 1.69149 1.39832L4.77617 0.557047Z" stroke="white" stroke-width="0.855" />
+          </svg>
+        </div>
+      </button>
+    </header>
+
+    <!-- Mobile Menu with Backdrop Blur -->
+    <div id="mobile-menu" class="hidden fixed z-10 inset-0 bg-black bg-opacity-50 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 text-white text-lg">
+      <button id="close-menu" class="absolute top-6 right-6 text-white text-4xl">&times;</button>
+      <a href="#" class="hover:text-gray-300">Home</a>
+      <a href="#" class="hover:text-gray-300">About Us</a>
+      <a href="#" class="hover:text-gray-300">Services</a>
+      <a href="#" class="hover:text-gray-300">Products</a>
+      <a href="#" class="hover:text-gray-300">Clients</a>
+      <a href="#" class="hover:text-gray-300">Blogs</a>
+      <a href="#" class="hover:text-gray-300">Careers</a>
+      <a href="#" class="hover:text-gray-300">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="text-center py-12">
+    <h1 class="text-5xl font-bold mb-4">Meet <span class="text-blue-600">Our</span> Team</h1>
+    <p class="text-xl text-gray-200">The brilliant minds behind our success.</p>
+  </header>
+
+  <!-- Team Members Section -->
+  <section class="w-full max-w-7xl px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      
+      <!-- Team Member 1 -->
+      <div class="glass-effect p-6 text-center hover-scale">
+        <img class="w-32 h-32 mx-auto rounded-full mb-4" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+        <h2 class="text-xl font-semibold">John Doe</h2>
+        <p class="text-gray-200">CEO & Founder</p>
+      </div>
+      
+      <!-- Team Member 2 -->
+      <div class="glass-effect p-6 text-center hover-scale">
+        <img class="w-32 h-32 mx-auto rounded-full mb-4" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+        <h2 class="text-xl font-semibold">Jane Smith</h2>
+        <p class="text-gray-200">Chief Technology Officer</p>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="glass-effect p-6 text-center hover-scale">
+        <img class="w-32 h-32 mx-auto rounded-full mb-4" src="https://randomuser.me/api/portraits/men/50.jpg" alt="Team Member">
+        <h2 class="text-xl font-semibold">Robert Brown</h2>
+        <p class="text-gray-200">Lead Developer</p>
+      </div>
+
+      <!-- Team Member 4 -->
+      <div class="glass-effect p-6 text-center hover-scale">
+        <img class="w-32 h-32 mx-auto rounded-full mb-4" src="https://randomuser.me/api/portraits/women/60.jpg" alt="Team Member">
+        <h2 class="text-xl font-semibold">Emily Davis</h2>
+        <p class="text-gray-200">Head of Marketing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="text-center py-12">
+    <h2 class="text-3xl font-bold mb-4">Want to Join Our Team?</h2>
+    <p class="text-xl text-gray-200 mb-6">We're always looking for talented individuals!</p>
+    <a href="#" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Apply Now</a>
+  </section>
+  
+  <!-- Footer Section -->
+  <footer class="bg-black text-white w-full sm:p-6">
+    <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <!-- Left Section -->
+      <div class="col-span-1">
+        <div class="mb-4">
+          <img src="./assets/img/DuoDevLogo.png" alt="Logo" class="h-16" />
+        </div>
+        <h2 class="text-xl font-semibold mb-2">
+          We grow your business with customized digital solutions
+        </h2>
+        <p class="text-gray-400 mb-4">Duo Dev Technologies, Since 2022</p>
+        <address class="not-italic text-gray-400 text-sm leading-6">
+          3rd Floor, Incubation Centre,<br />
+          Erode Sengunthar Engineering College,<br />
+          Thudupathi, Perundurai, Tamil Nadu - 638057
+        </address>
+        <!-- <div class="mt-6">
+          <img src="assets/img/DuoDevLogo.png" alt="MSME Logo" class="h-12" />
+        </div> -->
+      </div>
+
+      <!-- Links Section -->
+      <div class="md:col-span-3 sm:p-16">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <!-- Company Links -->
+          <div>
+            <h3 class="font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">About Us</a></li>
+              <li><a href="#" class="hover:text-white">Services</a></li>
+              <li><a href="#" class="hover:text-white">Products</a></li>
+              <li><a href="#" class="hover:text-white">Careers</a></li>
+              <li><a href="#" class="hover:text-white">Our Team</a></li>
+              <li><a href="#" class="hover:text-white">Contact Us</a></li>
+              <li><a href="#" class="hover:text-white">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources Links -->
+          <div>
+            <h3 class="font-semibold mb-4">Resources</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">ERP Documentation</a></li>
+              <li><a href="#" class="hover:text-white">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal Links -->
+          <div>
+            <h3 class="font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Disclaimer</a></li>
+              <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 mt-8">
+      <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
+        <a href="https://duodev.in/">
+          <p class="text-gray-400 text-sm text-center md:text-left">
+            &copy; 2024 Duo Dev Technologies
+          </p>
+        </a>
+        <div class="flex space-x-4 mt-4 md:mt-0 justify-center">
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+ <!-- JavaScript for Navbar Toggle -->
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenu = document.getElementById("close-menu");
+  
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+      });
+  
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+  
+      // Close menu if clicking outside the menu area
+      mobileMenu.addEventListener("click", (event) => {
+        if (event.target === mobileMenu) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+
+</html>
