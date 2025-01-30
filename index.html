@@ -30,59 +30,59 @@
     .marquee {
       animation: marquee 8s linear infinite;
     }
+
+    #navbar {
+      transition: top 0.3s ease, background-color 0.3s ease, margin-top 0.3s ease;
+    }
   </style>
 </head>
 
 <body class="overflow-x-hidden">
 
-  <!-- Hero Section -->
-  <section>
-    <!-- Campaign Bar -->
-    <div class="bg-sky-900 text-white text-xs sm:text-sm text-center p-2">
-      <p>Building Smart Web Solutions for Your Business Growth!</p>
-    </div>
+  <!-- Campaign Bar -->
+  <div class="bg-sky-900 text-white text-xs sm:text-sm text-center p-2">
+    <p>Building Smart Web Solutions for Your Business Growth!</p>
+  </div>
 
-    <!-- Navbar Section -->
-    <div class="bg-gradient-to-b from-blue-500 to-sky-300 min-h-screen sm:rounded-br-[30%_50%]">
-      <header class="flex items-center justify-between px-4 py-4 md:px-8">
-        <!-- Logo -->
-        <div class="flex items-center">
-          <img src="./assets/img/DuoDevLogo.webp" class="h-14 w-14 rounded-lg" alt="Duo Dev Logo">
-          <h1 class="text-white text-xl font-bold ml-2 px-2 uppercase"><span>D</span>uo Dev <br> Technologies</h1>
-        </div>
+  <!-- Navbar Section -->
+  <div class="w-full fixed top-0 z-50 bg-blue-500" id="navbar">
+    <header class=" flex items-center justify-between px-4 py-4 md:px-8">
+      <!-- Logo --> 
+      <div class="flex items-center" id="nav-text">
+        <img src="./assets/img/DuoDevLogo.webp" class="h-14 w-14 rounded-lg" alt="Duo Dev Logo">
+        <h1 class="text-white text-xl font-bold ml-2 px-2 uppercase">Duo Dev <br> Technologies</h1>
+      </div>
 
-        <!-- Hamburger Menu (Mobile) -->
-        <button id="menu-toggle" class="block md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
-          <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      <!-- Hamburger Menu (Mobile) -->
+      <button id="menu-toggle" class="block md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+        <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+
+      <!-- Navigation Menu -->
+      <nav id="nav-menu" class="text-sm hidden md:flex flex-col md:flex-row md:space-x-12 text-white font-medium">
+        <ul class="flex flex-col md:flex-row md:space-x-12 text-center md:text-left space-y-2 md:space-y-0">
+          <li><a href="#" class="hover:text-gray-300">Home</a></li>
+          <li><a href="#" class="hover:text-gray-300">About Us</a></li>
+          <li><a href="#" class="hover:text-gray-300">Services</a></li>
+          <li><a href="#" class="hover:text-gray-300">Products</a></li>
+          <li><a href="#" class="hover:text-gray-300">Clients</a></li>
+          <li><a href="https://duodev.in/blog" class="hover:text-gray-300">Blogs</a></li>
+          <li><a href="https://duodev.in/careers" class="hover:text-gray-300">Careers</a></li>
+          <li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Get a Quote Button -->
+      <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full hidden sm:flex items-center space-x-2 mt-4 md:mt-0">
+        <span>Get a Quote</span>
+        <div class="bg-black p-3 rounded-full opacity-80">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.77617 0.557047L4.77635 0.556998C5.23222 0.432457 5.70713 0.651856 5.9089 1.07248L5.93124 1.12609L7.33391 4.4925L7.33398 4.49268C7.4996 4.88968 7.38539 5.34746 7.05119 5.62069C7.05118 5.62069 7.05118 5.6207 7.05117 5.6207L5.32239 7.03388L5.06356 7.24546L5.20651 7.54766C6.41652 10.1058 8.4873 12.1765 11.0454 13.3866L11.3472 13.5293L11.5589 13.2711L12.9755 11.5423L12.9756 11.5423L12.9771 11.5404C13.2458 11.2087 13.7058 11.093 14.1039 11.2591L14.1041 11.2592L17.4705 12.6618L17.4714 12.6622C17.9239 12.8495 18.1654 13.3434 18.0361 13.8167L18.036 13.8169L17.1947 16.9016C17.1947 16.9018 17.1946 16.902 17.1946 16.9022C17.0768 17.328 16.6905 17.6222 16.2533 17.6222C7.81384 17.6222 0.970835 10.7792 0.970835 2.33979C0.970835 1.90254 1.26507 1.5162 1.69097 1.39847C1.69114 1.39842 1.69132 1.39837 1.69149 1.39832L4.77617 0.557047Z" stroke="white" stroke-width="0.855" />
           </svg>
-        </button>
-
-        <!-- Navigation Menu -->
-        <nav id="nav-menu" class="hidden md:flex flex-col md:flex-row md:space-x-12 text-white font-medium">
-          <ul class="flex flex-col md:flex-row md:space-x-12 text-center md:text-left space-y-2 md:space-y-0">
-            <li><a href="#" class="hover:text-gray-300">Home</a></li>
-            <li><a href="#" class="hover:text-gray-300">About Us</a></li>
-            <li><a href="#" class="hover:text-gray-300">Services</a></li>
-            <li><a href="#" class="hover:text-gray-300">Products</a></li>
-            <li><a href="#" class="hover:text-gray-300">Clients</a></li>
-            <li><a href="https://duodev.in/careers" class="hover:text-gray-300">Blogs</a></li>
-            <li><a href="https://duodev.in/careers" class="hover:text-gray-300">Careers</a></li>
-            <li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
-          </ul>
-        </nav>
-
-        <!-- Get a Quote Button -->
-        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full hidden sm:flex items-center space-x-2 mt-4 md:mt-0">
-          <span>Get a Quote</span>
-          <div class="bg-black p-3 rounded-full opacity-80">
-            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.77617 0.557047L4.77635 0.556998C5.23222 0.432457 5.70713 0.651856 5.9089 1.07248L5.93124 1.12609L7.33391 4.4925L7.33398 4.49268C7.4996 4.88968 7.38539 5.34746 7.05119 5.62069C7.05118 5.62069 7.05118 5.6207 7.05117 5.6207L5.32239 7.03388L5.06356 7.24546L5.20651 7.54766C6.41652 10.1058 8.4873 12.1765 11.0454 13.3866L11.3472 13.5293L11.5589 13.2711L12.9755 11.5423L12.9756 11.5423L12.9771 11.5404C13.2458 11.2087 13.7058 11.093 14.1039 11.2591L14.1041 11.2592L17.4705 12.6618L17.4714 12.6622C17.9239 12.8495 18.1654 13.3434 18.0361 13.8167L18.036 13.8169L17.1947 16.9016C17.1947 16.9018 17.1946 16.902 17.1946 16.9022C17.0768 17.328 16.6905 17.6222 16.2533 17.6222C7.81384 17.6222 0.970835 10.7792 0.970835 2.33979C0.970835 1.90254 1.26507 1.5162 1.69097 1.39847C1.69114 1.39842 1.69132 1.39837 1.69149 1.39832L4.77617 0.557047Z" stroke="white" stroke-width="0.855" />
-            </svg>
-          </div>
-        </button>
-      </header>
-
+        </div>
+      </button>
       <!-- Mobile Menu with Backdrop Blur -->
       <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 text-white text-lg">
         <button id="close-menu" class="absolute top-6 right-6 text-white text-2xl">&times;</button>
@@ -91,11 +91,15 @@
         <a href="#" class="hover:text-gray-300">Services</a>
         <a href="#" class="hover:text-gray-300">Products</a>
         <a href="#" class="hover:text-gray-300">Clients</a>
-        <a href="https://duodev.in/blog" class="hover:text-gray-300">Blogs</a>
+        <a href="https://duodev.in/blogs" class="hover:text-gray-300">Blogs</a>
         <a href="https://duodev.in/careers" class="hover:text-gray-300">Careers</a>
         <a href="#" class="hover:text-gray-300">Contact Us</a>
       </div>
-    </div>
+    </header>
+  </div>
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-blue-500 to-sky-300 min-h-screen sm:rounded-br-[30%_50%]">
   </section>
 
 
@@ -138,47 +142,133 @@
 
   <!-- Services Section -->
   <section>
-    <div class="w-full bg-gray-200 text-gray-800 flex flex-col">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mt-14">Our <span class="text-blue-500">Expert Solutions</span></h2>
+    <div class="w-full bg-gray-200 text-gray-800 flex flex-col py-6">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mt-14">Our <span class="text-blue-500">Expert</span> Solutions</h2>
       <p class="text-center mt-6 sm:mx-28">At Duo Dev Technologies, we go beyond web development to offer cutting-edge products designed to simplify your operations and empower your business.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-8 ml-6 mr-6 mb-20 px-4 mt-10 flex-row">
         
-        <!-- Single Card Template -->
+        <!-- Cards -->
         <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and grow your business with expert support.</p>
-            <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-solid fa-globe"></i></div>
+            <h3 class="text-xl font-semibold mb-2">Web Design & Development</h3>
+            <p class="text-gray-600 mb-4">Transform your ideas into reality with our expert web development service. We create robust, scalable websites and web applications tailored to your business needs. From custom features to seamless user experiences, we ensure your online presence stands out.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
           </div>
         </div>
-        <!-- Single Card Template -->
+      
         <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and grow your business with expert support.</p>
-            <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-regular fa-envelope"></i></div>
+            <h3 class="text-xl font-semibold mb-2">Business Email</h3>
+            <p class="text-gray-600 mb-10">Streamline your communication with our business email setup service. We integrate Google Workspace, Mailchimp, and more to create a professional, efficient email system tailored to your needs. Secure, reliable, and easy to manage.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
           </div>
         </div>
-        <!-- Single Card Template -->
+      
         <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and grow your business with expert support.</p>
-            <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-solid fa-paintbrush"></i></div>
+            <h3 class="text-xl font-semibold mb-2">Graphic Design</h3>
+            <p class="text-gray-600 mb-10">Elevate your brand with our professional graphic design service. We create stunning visuals that capture your identity and engage your audience. From logos to marketing materials, we deliver high-quality designs tailored to your needs.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
           </div>
         </div>
-        <!-- Single Card Template -->
+        
         <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and grow your business with expert support.</p>
-            <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-solid fa-server"></i></div>
+            <h3 class="text-xl font-semibold mb-2">Hosting & Domain Registration</h3>
+            <p class="text-gray-600 mb-10">Simplify your online presence with our hosting and domain service. We assist with purchasing, setup, and management, ensuring your website runs smoothly and securely. Expert support tailored to your technical needs.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
           </div>
         </div>
+
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3 class="text-xl font-semibold mb-2">WhatsApp API</h3>
+            <p class="text-gray-600 mb-10">Unlock seamless communication with our WhatsApp API service. Enhance customer engagement, automate messages, and boost business efficiency with reliable, fast, and secure WhatsApp integration tailored to your needs.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-solid fa-store"></i></div>
+            <h3 class="text-xl font-semibold mb-2">Google Business Profile</h3>
+            <p class="text-gray-600 mb-10">Boost your visibility with our Google Business Profile service. We optimize your profile to attract more customers, improve local search rankings, and enhance your online presence. Stand out and grow your business with our expert support.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-brands fa-linkedin"></i></div>
+            <h3 class="text-xl font-semibold mb-2">Linkedin API</h3>
+            <p class="text-gray-600 mb-16">Enhance your business networking with our LinkedIn API service. Integrate LinkedIn features into your platform to streamline connections, automate interactions, and boost engagement. Professional, efficient, and tailored to your needs.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-solid fa-person-chalkboard"></i></div>
+            <h3 class="text-xl font-semibold mb-2">Internship/Inplant Training</h3>
+            <p class="text-gray-600 mb-10">Advance your skills with our comprehensive internship and training programs. Gain hands-on experience, industry knowledge, and personalized mentorship to excel in your field. Tailored for aspiring professionals, our programs pave the way for your career success.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-solid fa-envelopes-bulk"></i></div>
+            <h3 class="text-xl font-semibold mb-2">Bulk Email</h3>
+            <p class="text-gray-600 mb-10">Reach your audience effectively with our bulk email service. We provide efficient, scalable solutions for sending large volumes of emails, ensuring high deliverability and engagement. Perfect for marketing campaigns and announcements.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-brands fa-searchengin"></i></div>
+            <h3 class="text-xl font-semibold mb-2">SEO Optimization & Strategy</h3>
+            <p class="text-gray-600 mb-10">Boost your online visibility with tailored SEO strategies, improving search rankings, driving organic traffic, and enhancing user engagement for long-term business success.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="inline-flex items-center justify-center text-[#0984e2] hover:black ">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
+          <div class="pt-6 px-6 text-center">
+            <div class="text-blue-500 mb-4 text-4xl"><i class="fa-solid fa-gears"></i></div>
+            <h3 class="text-xl font-semibold mb-2">Customized ERP Solutions</h3>
+            <p class="text-gray-600 mb-10">Tailor-made ERP solutions streamline business operations, integrate processes, automate workflows, and enhance decision-making. Scalable, secure, and user-friendly, these systems boost productivity and efficiency while adapting to unique business needs.</p>
+          </div>
+          <div class="pb-4 text-center">
+            <a href="#" class="text-[#0984e2]">Know More&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -188,14 +278,14 @@
   <section class="bg-black py-16">
     <div class="container mx-auto text-center">
       <h2 class="text-2xl sm:text-4xl font-bold text-white mb-8">Digital <span class="text-[#0984e2]">Product</span> Solutions ?</h2>
-      <p class="text-white mb-16 sm:mx-24">
+      <p class="text-white mb-16 px-4">
         At Duo Dev Technologies, we go beyond web development to offer cutting-edge products designed to simplify your operations and empower your business.
       </p>
       
       <!-- ERP Description -->
       <div class="mb-12">
         <h3 class="text-white font-bold text-xl mb-4">Institutional ERP Solutions:</h3>
-        <p class="text-white text-lg sm:text-justify mx-4 sm:mx-28">
+        <p class="text-white text-lg text-justify mx-4 sm:mx-28 sm:px-4">
           Empower your educational institution with our feature-rich ERP system or let us craft a customized ERP tailored to your unique needs. At Duo Dev Technologies, we offer flexibility and innovation to help you achieve operational excellence.
         </p>
       </div>
@@ -203,7 +293,7 @@
       <!-- ERP Features Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:px-16 sm:mb-8 mt-14">
         <!-- Card 1 -->
-        <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
+        <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto m-4">
           <div class="h-56 overflow-hidden rounded-2xl">
             <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Customizable Modules" class="w-full h-full object-cover" />
           </div>
@@ -214,7 +304,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
+        <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto m-4">
           <div class="h-56 overflow-hidden rounded-2xl">
             <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Automation and Efficiency" class="w-full h-full object-cover" />
           </div>
@@ -225,7 +315,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
+        <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto m-4">
           <div class="h-56 overflow-hidden rounded-2xl">
             <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Seamless Integration" class="w-full h-full object-cover" />
           </div>
@@ -237,8 +327,8 @@
       </div>
       
       <!-- Custom ERP Development -->
-      <div class="flex flex-col md:flex-row items-center md:items-start w-full text-white p-6 md:p-12">
-        <div class="w-full md:w-1/2 px-4 md:px-8">
+      <div class="flex flex-col md:flex-row items-center md:items-start w-full text-white p-10 md:p-12 gap-10">
+        <div class="w-full md:w-1/2 px-6 md:px-8">
           <h3 class="font-bold text-xl mb-4">Custom ERP Development:</h3>
           <p class="text-justify">
             Looking for something beyond a pre-built solution? Our team is ready to design and develop a brand-new ERP tailored exclusively to your institution’s unique requirements.
@@ -544,7 +634,7 @@
 
           <!-- Legal Links -->
           <div>
-            <h3 class="font-semibold mb-4 mt-2">Legal</h3>
+            <h3 class="font-semibold mb-4 mt-2 ">Legal</h3>
             <ul class="space-y-2 text-gray-400">
               <li><a href="#" class="hover:text-white">Disclaimer</a></li>
               <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
@@ -577,6 +667,7 @@
 
 <!-- JavaScript for Navbar Toggle -->
 <script>
+  // toggle button
   document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -597,6 +688,42 @@
       }
     });
   });
+  
+  
+  // Function to handle navbar positioning
+const updateNavbarPosition = () => {
+  const navbar = document.getElementById('navbar');
+  const navLinks = navbar.querySelectorAll('a');
+  const companyName = navbar.querySelector('h1');
+
+  // Check scroll position
+  if (window.scrollY > 50) {
+    navbar.classList.add('fixed', 'top-0', 'left-0', 'right-0', 'bg-sky-100');  
+    navbar.classList.remove('mt-1');  
+    companyName.style.color = 'black';
+    navLinks.forEach(link => {
+      link.style.color = 'black';
+    });
+  } else {
+    navbar.classList.remove('fixed', 'top-0', 'left-0', 'right-0', 'bg-sky-100'); 
+    navbar.classList.add('mt-1');  
+    companyName.style.color = 'white';
+    navLinks.forEach(link => {
+      link.style.color = 'white'; 
+    });
+  }
+};
+
+// Update navbar position on scroll
+window.addEventListener('scroll', updateNavbarPosition);
+
+// Handle navbar position on page load
+window.addEventListener('load', updateNavbarPosition);
+
+
+
+
+
 </script>
 
 </html>
