@@ -8,13 +8,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="shortcut icon" href="./assets/DuoDevLogo.ico" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- Include Font Awesome for Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
   <style>
+    
     @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
     * {
       font-family: 'Poppins', sans-serif;
     }
-
     @keyframes marquee {
       0% {
         transform: translateX(100%);
@@ -28,701 +30,176 @@
     .marquee {
       animation: marquee 8s linear infinite;
     }
+
+    #navbar {
+      transition: top 0.3s ease, background-color 0.3s ease, margin-top 0.3s ease;
+    }
+  
+    @media (max-width: 1299px) {
+    #desktop-menu {
+        display: none; /* Hide desktop menu */
+    }
+    #menu-toggle {
+        display: block !important; /* Show toggle button */
+    }
+
+    @media (min-width: 1300px) {
+        #desktop-menu {
+            display: flex !important; /* Ensure desktop menu is visible */
+        }
+        #menu-toggle {
+            display: none !important; /* Hide toggle button */
+        }
+    }
+
+}
+
   </style>
 </head>
 
 <body class="overflow-x-hidden">
-  <!-- Campign Bar -->
-  <div class="bg-sky-900 text-white text-xs sm:text-sm text-center p-2">
-    <p>Building Smart Web Solutions for Your Business Growth !</p>
-  </div>
-
-  <!-- Navbar Section -->
-  <div class="bg-gradient-to-b from-blue-500 to-sky-300 min-h-screen sm:rounded-br-[30%_50%]">
-    <header class="flex flex-wrap items-center justify-between px-4 py-4 md:px-8">
-      <div class="flex items-center">
-        <div>
-          <img src="./assets/img/DuoDevLogo.webp" class="h-14 w-14 rounded-lg">
-        </div>
-      </div>
-
-      <div class="md:bg-transparent">
-        <!-- Navbar Container -->
-        <div class="container mx-auto flex items-center justify-between px-6 py-4">
-
-
-          <!-- Hamburger Menu (Mobile) -->
-          <button id="menu-toggle" class="block md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
-            <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
-
-          <!-- Navigation Menu -->
-          <nav id="nav-menu" class="hidden md:flex flex-col md:flex-row md:space-x-12 text-white font-medium">
-            <ul class="flex flex-col md:flex-row md:space-x-12 text-center md:text-left space-y-2 md:space-y-0">
-              <li><a href="#" class="hover:text-gray-300">Home</a></li>
-              <li><a href="#" class="hover:text-gray-300">About Us</a></li>
-              <li><a href="#" class="hover:text-gray-300">Services</a></li>
-              <li><a href="#" class="hover:text-gray-300">Products</a></li>
-              <li><a href="#" class="hover:text-gray-300">Clients</a></li>
-              <li><a href="#" class="hover:text-gray-300">Blogs</a></li>
-              <li><a href="#" class="hover:text-gray-300">Careers</a></li>
-              <li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <!-- JavaScript -->
-      <script>
-        const menuToggle = document.getElementById("menu-toggle");
-        const navMenu = document.getElementById("nav-menu");
-
-        menuToggle.addEventListener("click", () => {
-          navMenu.classList.toggle("hidden");
-        });
-      </script>
-
-      <button
-        class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full flex items-center space-x-2 mt-4 md:mt-0 md:flex hidden">
-        <span>Get a Quote</span>
-        <div class="bg-black p-3 rounded-full opacity-0.2">
-          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M4.77617 0.557047L4.77635 0.556998C5.23222 0.432457 5.70713 0.651856 5.9089 1.07248L5.93124 1.12609L7.33391 4.4925L7.33398 4.49268C7.4996 4.88968 7.38539 5.34746 7.05119 5.62069C7.05118 5.62069 7.05118 5.6207 7.05117 5.6207L5.32239 7.03388L5.06356 7.24546L5.20651 7.54766C6.41652 10.1058 8.4873 12.1765 11.0454 13.3866L11.3472 13.5293L11.5589 13.2711L12.9755 11.5423L12.9756 11.5423L12.9771 11.5404C13.2458 11.2087 13.7058 11.093 14.1039 11.2591L14.1041 11.2592L17.4705 12.6618L17.4714 12.6622C17.9239 12.8495 18.1654 13.3434 18.0361 13.8167L18.036 13.8169L17.1947 16.9016C17.1947 16.9018 17.1946 16.902 17.1946 16.9022C17.0768 17.328 16.6905 17.6222 16.2533 17.6222C7.81384 17.6222 0.970835 10.7792 0.970835 2.33979C0.970835 1.90254 1.26507 1.5162 1.69097 1.39847C1.69114 1.39842 1.69132 1.39837 1.69149 1.39832L4.77617 0.557047Z"
-              stroke="white" stroke-width="0.855" />
-          </svg>
-        </div>
-      </button>
-    </header>
-
-    <!-- Hero Section -->
-    <div class="w-full flex items-center justify-center text-center text-white px-4 space-x-18 ">
-      <div class="w-full sm:w-1/2">
-        <h3 class="text-lg">Your Vision, Your Website, Our Expertise</h3>
-        <h1 class="text-5xl font-bold mt-2 text-sky-900">Boost Your Success with<br>Duo Dev Technologies!</h1>
-      </div>
-      <div class="w-1/2">
-        <img src="./assets/img/hero.png" alt="" class="lg:w-4/6 hidden sm:block">
-      </div>
-    </div>
-  </div>
-
-  <!-- Techstacks Section -->
-  <div class="w-full overflow-x-hidden whitespace-nowrap my-10 p-4">
-    <div class="marquee flex space-x-10 sm:space-x-20">
-      <img src="./assets/tech_stack/bootstrap.webp" alt="bootstrap" class="h-20">
-      <img src="./assets/tech_stack/jquery.webp" alt="jquery" class="h-20">
-      <img src="./assets/tech_stack/laravel.webp" alt="laravel" class="h-20">
-      <img src="./assets/tech_stack/mysql.webp" alt="mysql" class="h-20">
-      <img src="./assets/tech_stack/php.webp" alt="php" class="h-20">
-      <img src="./assets/tech_stack/react.webp" alt="react" class="h-20">
-      <img src="./assets/tech_stack/shopify.webp" alt="shopify" class="h-20">
-      <img src="./assets/tech_stack/tailwind.webp" alt="tailwind" class="h-20">
-      <img src="./assets/tech_stack/wordpress.webp" alt="wordpress" class="h-20">
-    </div>
-  </div>
-
-
-  <!-- About Us Section -->
-  <div class="flex flex-col md:flex-row items-center md:items-start w-full bg-white text-gray-800 p-6 md:p-12 mb-10">
-    <!-- Left Side Image -->
-    <div class="w-full md:w-1/2 flex justify-center md:justify-center mb-6 md:mb-0">
-      <img src="./assets/img/Team Image.png" alt="Team" class="max-w-full h-auto rounded-lg shadow-md">
-    </div>
-    <!-- Right Side Content -->
-    <div class="w-full md:w-1/2 px-4 md:px-8">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mt-8">Who <span class="text-blue-500">We</span> Are?</h2>
-      <p class="text-base md:text-lg mt-4 md:mt-6 text-justify leading-relaxed indent-8">
-        At Duo Dev Technologies, we are passionate creators and problem solvers committed to delivering exceptional
-        digital experiences. Founded in January 2022 by two friends inspired by their love for technology, our team
-        has grown into a diverse group of skilled professionals. We offer a wide range of services including web
-        development, design, hosting, and more, all tailored to meet the unique needs of our clients. With a focus
-        on excellence and customer satisfaction, we aim to be your trusted partner in achieving digital success.
-        Contact us to discover how we can bring your vision to life.
-      </p>
-    </div>
-  </div>
-
-
-  <!-- Services Section -->
-  <section class="">
-    <div class="w-full bg-gray-200 text-gray-800 flex flex-col">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mt-14">Our <span class="text-blue-500">Expert
-        </span>Solutions</h2>
-      <p class="text-center mt-6 sm:mx-28">At Duo Dev Technologies, we go beyond web development to offer cutting-edge
-        products
-        designed to simplify your operations and empower your business.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-8 ml-6 mr-6 mb-20 px-4 mt-10 flex-row">
-        <!-- Single Card -->
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
-          </div>
-        </div>
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
-          </div>
-        </div>
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
-          </div>
-        </div>
-
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
-          </div>
-        </div>
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
-          </div>
-        </div>
-        <div
-          class="bg-white border-2 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="p-6 text-center">
-            <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-store"></i></div>
-            <h3 class="text-xl font-semibold mb-2">Google My Business</h3>
-            <p class="text-gray-600 mb-4">Boost your visibility with our Google Business Profile service. Stand out and
-              grow your business with expert support.</p>
-            <a href="#"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition duration-300">→</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ERP Section -->
-  <div class="w-full bg-black flex flex-col py-8">
-    <h2 class="text-2xl sm:text-4xl font-bold text-center text-white mt-10">Digital <span class="text-blue-500">Product</span> Solutions ?</h2>
-    <p class="text-center text-white mt-8 sm:mx-24 mb-16">At Duo Dev Technologies, we go beyond web development to offer
-      cutting-edge products designed to simplify your operations and empower your business.</p>
-    <div>
-      <h3 class="text-white font-bold text-lg sm:ml-24 sm:text-left text-center mb-4">Institutional ERP Solutions:</h3>
-      <h2 class="text-white sm:indent-20 sm:ml-24 sm:mx-28 sm:text-justify text-center mx-4">Empower your educational
-        institution with our
-        feature-rich ERP system or let us craft a customized ERP tailored to your unique needs. At Duo Dev Technologies,
-        we offer flexibility and innovation to help you achieve operational excellence.</h2>
+<!-- Navbar Section -->
+<div class="w-full fixed top-0 z-50 bg-blue-500 mt-0" id="navbar">
+  <header class=" flex items-center justify-between px-4 py-4 md:px-8">
+    <!-- Logo --> 
+    <div class="flex items-center" id="nav-text">
+      <img src="./assets/img/DuoDevLogo.webp" class="h-14 w-14 rounded-lg" alt="Duo Dev Logo">
+      <h1 class="text-white text-xl font-bold ml-2 px-2 uppercase">Duo Dev <br> Technologies</h1>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:px-16 sm:mb-8 mt-14">
-      <!-- Card 1 -->
-      <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
-        <div class="h-56 overflow-hidden rounded-2xl">
-          <img
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="card-image" class="w-full h-full object-cover" />
-        </div>
-        <div class="p-4">
-          <h6 class="mb-2 text-slate-800 text-xl font-semibold text-center">
-            Customizable Modules
-          </h6>
-          <p class="text-slate-600 leading-normal text-justify">
-            Whether it’s fee management, timetable creation, or library management, our ERP can be tailored to your
-            institution’s specific workflows.
-          </p>
-        </div>
-      </div>
+    <!-- Hamburger Menu (Mobile) -->
+    <button id="menu-toggle" class="block md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+      <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
 
-      <!-- Card 2 -->
-      <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
-        <div class="h-56 overflow-hidden rounded-2xl">
-          <img
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="card-image" class="w-full h-full object-cover" />
-        </div>
-        <div class="p-4">
-          <h6 class="mb-2 text-slate-800 text-xl font-semibold text-center">
-            Automation and Efficiency
-          </h6>
-          <p class="text-slate-600 leading-normal text-justify">
-            Save time and effort with automated processes for exam scheduling, grading, and notifications for students,
-            parents, and staff.
-          </p>
-        </div>
-      </div>
+    <!-- Navigation Menu -->
+    <nav id="nav-menu" class="text-sm hidden md:flex flex-col md:flex-row md:space-x-12 text-white font-medium">
+      <ul class="flex flex-col md:flex-row md:space-x-12 text-center md:text-left space-y-2 md:space-y-0">
+        <li><a href="#" class="hover:text-gray-300">Home</a></li>
+        <li><a href="#" class="hover:text-gray-300">About Us</a></li>
+        <li><a href="#" class="hover:text-gray-300">Services</a></li>
+        <li><a href="#" class="hover:text-gray-300">Products</a></li>
+        <li><a href="#" class="hover:text-gray-300">Clients</a></li>
+        <li><a href="https://duodev.in/blog" class="hover:text-gray-300">Blogs</a></li>
+        <li><a href="https://duodev.in/careers" class="hover:text-gray-300">Careers</a></li>
+        <li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
+      </ul>
+    </nav>
 
-      <!-- Card 3 -->
-      <div class="flex flex-col bg-white shadow-sm rounded-2xl w-80 mx-auto">
-        <div class="h-56 overflow-hidden rounded-2xl">
-          <img
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="card-image" class="w-full h-full object-cover" />
-        </div>
-        <div class="p-4">
-          <h6 class="mb-2 text-slate-800 text-xl font-semibold text-center">
-            Seamless Integration
-          </h6>
-          <p class="text-slate-600 leading-normal text-justify">
-            Easily integrate our ERP with existing tools, software, and databases to ensure smooth operations and
-            minimal disruption.
-          </p>
-        </div>
+    <!-- Get a Quote Button -->
+    <button class="bg-white hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full hidden sm:flex items-center space-x-2 mt-4 md:mt-0">
+      <span>Get a Quote</span>
+      <div class="bg-black p-3 rounded-full opacity-80">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.77617 0.557047L4.77635 0.556998C5.23222 0.432457 5.70713 0.651856 5.9089 1.07248L5.93124 1.12609L7.33391 4.4925L7.33398 4.49268C7.4996 4.88968 7.38539 5.34746 7.05119 5.62069C7.05118 5.62069 7.05118 5.6207 7.05117 5.6207L5.32239 7.03388L5.06356 7.24546L5.20651 7.54766C6.41652 10.1058 8.4873 12.1765 11.0454 13.3866L11.3472 13.5293L11.5589 13.2711L12.9755 11.5423L12.9756 11.5423L12.9771 11.5404C13.2458 11.2087 13.7058 11.093 14.1039 11.2591L14.1041 11.2592L17.4705 12.6618L17.4714 12.6622C17.9239 12.8495 18.1654 13.3434 18.0361 13.8167L18.036 13.8169L17.1947 16.9016C17.1947 16.9018 17.1946 16.902 17.1946 16.9022C17.0768 17.328 16.6905 17.6222 16.2533 17.6222C7.81384 17.6222 0.970835 10.7792 0.970835 2.33979C0.970835 1.90254 1.26507 1.5162 1.69097 1.39847C1.69114 1.39842 1.69132 1.39837 1.69149 1.39832L4.77617 0.557047Z" stroke="white" stroke-width="0.855" />
+        </svg>
       </div>
+    </button>
+    <!-- Mobile Menu with Backdrop Blur -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 text-white text-lg">
+      <button id="close-menu" class="absolute top-6 right-6 text-white text-4xl">&times;</button>
+      <a href="#" class="hover:text-gray-300">Home</a>
+      <a href="#" class="hover:text-gray-300">About Us</a>
+      <a href="#" class="hover:text-gray-300">Services</a>
+      <a href="#" class="hover:text-gray-300">Products</a>
+      <a href="#" class="hover:text-gray-300">Clients</a>
+      <a href="https://duodev.in/blog" class="hover:text-gray-300">Blogs</a>
+      <a href="https://duodev.in/careers" class="hover:text-gray-300">Careers</a>
+      <a href="#" class="hover:text-gray-300">Contact Us</a>
     </div>
-
-    <div class="flex flex-col md:flex-row items-center md:items-start w-full text-white p-6 md:p-12">
-      <!-- Right Side Content -->
-      <div class="w-full md:w-1/2 px-4 md:px-8">
-        <h3 class="font-bold text-xl mb-4">Custom ERP Development :</h3>
-        <p class="text-justify">Looking for something beyond a pre-built solution? Our team is ready to design and
-          develop a brand-new ERP tailored exclusively to your institution’s unique requirements.</p>
-
-        <ul class="list-disc ml-3 sm:ml-6 mt-6 text-justify">
-          <li class="mb-6">Collaborative Design: Work closely with our experts to define the features and
-            functionalities you need.</li>
-          <li class="mb-6">Future-Ready Solutions: Build an ERP equipped to handle your institution’s evolving
-            challenges.</li>
-          <li class="mb-6">On-Time Delivery: We ensure timely delivery without compromising quality.</li>
-        </ul>
-        <div class="bg-green-500 text-black p-2 rounded-lg text-center w-32 mt-6 mx-auto mb-6">
-          <button>Call Now</button>
-        </div>
-      </div>
-      <!-- Left Side Image -->
-      <div class="w-full md:w-1/2 flex justify-center mx-auto md:justify-center mb-4 md:mb-0">
-        <img src="./assets/img/Team Image.png" alt="Team" class="max-w-full h-auto rounded-lg shadow-md">
-      </div>
-    </div>
-  </div>
-
-  <section class="bg-gray-100 py-12 my-10">
-    <div class="container mx-auto px-2 lg:px-16 mb-10">
-      <h2 class="text-3xl font-bold text-center mb-12">
-        Our <span class="text-blue-500">Beloved</span> Clients
-      </h2>
-      <div class="relative">
-        <!-- Carousel Wrapper -->
-        <div id="carousel" class="flex space-x-6 overflow-hidden">
-          <!-- Card 1 -->
-          <div class="bg-gray-100 flex items-center justify-center">
-            <div
-              class="bg-white h-52 w-96 flex flex-col items-center justify-center rounded-lg shadow-md overflow-hidden">
-              <!-- Card Image -->
-              <img src="./assets/tech_stack/mysql.webp" alt="Card Image" class="size-28 object-contain mb-2" />
-              <!-- Card Title -->
-              <h3 class="text-lg font-semibold text-gray-800 text-center mt-3">Card Title</h3>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="bg-gray-100 flex items-center justify-center">
-            <div
-              class="bg-white h-52 w-96 flex flex-col items-center justify-center rounded-lg shadow-md overflow-hidden">
-              <!-- Card Image -->
-              <img src="./assets/tech_stack/mysql.webp" alt="Card Image" class="size-28 object-contain mb-2" />
-              <!-- Card Title -->
-              <h3 class="text-lg font-semibold text-gray-800 text-center mt-3">Card Title</h3>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="bg-gray-100 flex items-center justify-center">
-            <div
-              class="bg-white h-52 w-96 flex flex-col items-center justify-center rounded-lg shadow-md overflow-hidden">
-              <!-- Card Image -->
-              <img src="./assets/tech_stack/mysql.webp" alt="Card Image" class="size-28 object-contain mb-2" />
-              <!-- Card Title -->
-              <h3 class="text-lg font-semibold text-gray-800 text-center mt-3">Card Title</h3>
-            </div>
-          </div>
-
-
-        </div>
-
-        <!-- Navigation Buttons -->
-        <button id="prev-btn"
-          class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-blue-500 text-white p-3 rounded-full shadow-md hover:bg-blue-600 z-10">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button id="next-btn"
-          class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-blue-500 text-white p-3 rounded-full shadow-md hover:bg-blue-600 z-10">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Include Font Awesome for Icons -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-
-  <script>
-    const carousel = document.getElementById("carousel");
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
-    const cardWidth = 320; // Width of each card including margin
-    let scrollPosition = 0;
-
-    // Manual scrolling with buttons
-    nextBtn.addEventListener("click", () => {
-      if (scrollPosition < (carousel.scrollWidth - carousel.offsetWidth)) {
-        scrollPosition += cardWidth;
-        carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
-      } else {
-        scrollPosition = 0; // Reset to the beginning
-        carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
-      }
-    });
-
-    prevBtn.addEventListener("click", () => {
-      if (scrollPosition > 0) {
-        scrollPosition -= cardWidth;
-        carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
-      }
-    });
-
-    // Auto-scrolling feature
-    function autoScrollCarousel() {
-      if (scrollPosition < (carousel.scrollWidth - carousel.offsetWidth)) {
-        scrollPosition += cardWidth;
-      } else {
-        scrollPosition = 0; // Reset to the beginning
-      }
-      carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
-    }
-
-    // Start auto-scrolling every 3 seconds
-    const autoScrollInterval = setInterval(autoScrollCarousel, 3000);
-
-    // Pause auto-scroll on hover
-    carousel.addEventListener("mouseenter", () => clearInterval(autoScrollInterval));
-    carousel.addEventListener("mouseleave", () => setInterval(autoScrollCarousel, 3000));
-  </script>
-
-
-  <section class="bg-black text-white">
-    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8 px-6 py-12 lg:px-16">
-      <!-- Left Content -->
-      <div class="mb-10">
-        <h2 class="text-3xl font-bold mb-6 mt-6 text-center">
-          Why <span class="text-blue-500">Choose </span>Us?
-        </h2>
-        <p class="text-gray-300 mb-12 text-center">
-          We’re not just building websites; we’re crafting digital experiences that reflect your unique vision. Here’s
-          why businesses trust us:
-        </p>
-        <div class="space-y-6">
-          <!-- Point 1 -->
-          <div class="flex items-start space-x-4">
-            <div class="text-blue-500 text-3xl mr-2">
-              <i class="fas fa-puzzle-piece"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold">Tailored Solutions</h3>
-              <p class="text-gray-300 text-justify">
-                We create customized websites and ERP systems designed to meet your specific goals and requirements.
-              </p>
-            </div>
-          </div>
-          <!-- Point 2 -->
-          <div class="flex items-start space-x-4">
-            <div class="text-blue-500 text-3xl mr-3">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold">Expertise and Innovation</h3>
-              <p class="text-gray-300 text-justify">
-                Our experienced team uses cutting-edge technologies to deliver modern, scalable, and efficient
-                solutions.
-              </p>
-            </div>
-          </div>
-          <!-- Point 3 -->
-          <div class="flex items-start space-x-4">
-            <div class="text-blue-500 text-3xl">
-              <i class="fas fa-handshake"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold">Reliable Support</h3>
-              <p class="text-gray-300 text-justify">
-                From development to post-launch maintenance, we provide ongoing support to ensure your success.
-              </p>
-            </div>
-          </div>
-          <!-- Point 4 -->
-          <div class="flex items-start space-x-4">
-            <div class="text-blue-500 text-3xl">
-              <i class="fas fa-user-check"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold">Client-Centric Approach</h3>
-              <p class="text-gray-300 text-justify">
-                We prioritize your vision, ensuring seamless collaboration and delivering solutions that exceed
-                expectations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Image -->
-      <div class="relative">
-        <div class="rounded-md overflow-hidden mx-32">
-          <img src="./assets/img/hero.png" alt="Why Choose Us Image" class="w-full h-full object-cover sm:block hidden">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Include Font Awesome -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-
-
-  <div class="bg-gray-100 flex items-center justify-center">
-    <div class="w-full mt-10 max-w-4xl overflow-hidden relative">
-      <h1 class="text-2xl font-bold text-center mb-2">Testimonials</h1>
-      <p class="text-center mb-10">See what people are saying</p>
-      <!-- Carousel Container -->
-      <div id="testimonialCarousel" class="flex transition-transform duration-700 ease-in-out">
-        <!-- Slide 1 -->
-        <div class="flex-shrink-0 w-full">
-          <div class="bg-white rounded-lg shadow-lg p-8 mx-4 flex flex-col items-center text-center">
-            <img src="./assets/img/DuoDevLogo.webp" alt="Person 1" class="w-24 h-24 rounded-full mb-4">
-            <p class="text-gray-600 italic">"This service transformed our business. Excellent quality and support!"</p>
-            <h3 class="mt-4 text-gray-800 font-semibold">John Doe</h3>
-            <span class="text-gray-500 text-sm">CEO, Company A</span>
-          </div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="flex-shrink-0 w-full">
-          <div class="bg-white rounded-lg shadow-lg p-8 mx-4 flex flex-col items-center text-center">
-            <img src="./assets/img/DuoDevLogo.webp" alt="Person 2" class="w-24 h-24 rounded-full mb-4">
-            <p class="text-gray-600 italic">"The team was professional and delivered exactly what we needed!"</p>
-            <h3 class="mt-4 text-gray-800 font-semibold">Jane Smith</h3>
-            <span class="text-gray-500 text-sm">CTO, Company B</span>
-          </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="flex-shrink-0 w-full">
-          <div class="bg-white rounded-lg shadow-lg p-8 mx-4 flex flex-col items-center text-center">
-            <img src="./assets/img/DuoDevLogo.webp" alt="Person 3" class="w-24 h-24 rounded-full mb-4">
-            <p class="text-gray-600 italic">"Highly recommend their services. They went above and beyond."</p>
-            <h3 class="mt-4 text-gray-800 font-semibold">Sarah Lee</h3>
-            <span class="text-gray-500 text-sm">Manager, Company C</span>
-          </div>
-        </div>
-      </div>
-      <!-- Navigation Dots -->
-      <div class="flex justify-center space-x-2 mt-6 mb-10">
-        <div class="h-3 w-3 bg-gray-400 rounded-full cursor-pointer dot active"></div>
-        <div class="h-3 w-3 bg-gray-400 rounded-full cursor-pointer dot"></div>
-        <div class="h-3 w-3 bg-gray-400 rounded-full cursor-pointer dot"></div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const carousel1 = document.getElementById("testimonialCarousel");
-    const dots = document.querySelectorAll(".dot");
-    let currentIndex = 0;
-
-    function updateCarousel() {
-      const width = carousel1.offsetWidth;
-      carousel1.style.transform = `translateX(-${currentIndex * width}px)`;
-      dots.forEach((dot, index) => {
-        dot.classList.toggle("bg-gray-800", index === currentIndex);
-        dot.classList.toggle("bg-gray-400", index !== currentIndex);
-      });
-    }
-
-    function autoScroll() {
-      currentIndex = (currentIndex + 1) % dots.length;
-      updateCarousel();
-    }
-
-    // Auto-scroll every 5 seconds
-    let interval = setInterval(autoScroll, 5000);
-
-    // Click event for navigation dots
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        clearInterval(interval); // Stop auto-scroll on user interaction
-        currentIndex = index;
-        updateCarousel();
-        interval = setInterval(autoScroll, 2000); // Restart auto-scroll
-      });
-    });
-
-    window.addEventListener("resize", updateCarousel); // Adjust carousel on window resize
-  </script>
-
-  <section class="bg-gray-100 py-16 px-6">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-20">
-      <!-- Left Section: Image -->
-      <div class="flex justify-center md:justify-end">
-        <img src="./assets/img/Team Image.png" alt="Contact Illustration" class="w-3/4 md:w-full max-w-md" />
-      </div>
-
-      <!-- Right Section: Form -->
-      <div class="w-full md:w-4/5 lg:w-3/4 mx-auto md:mx-0">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-center md:text-left">
-          Feel Free To Ask Us Anythink!
-        </h2>
-        <form action="#" class="space-y-6">
-          <!-- Name Input -->
-          <div>
-            <label for="name" class="sr-only">Name</label>
-            <input type="text" id="name" placeholder="Name"
-              class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" />
-          </div>
-
-          <!-- Phone and Email Inputs -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label for="phone" class="sr-only">Phone</label>
-              <input type="text" id="phone" placeholder="Phone"
-                class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" />
-            </div>
-            <div>
-              <label for="email" class="sr-only">Email</label>
-              <input type="email" id="email" placeholder="Email"
-                class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" />
-            </div>
-          </div>
-
-          <!-- Subject Input -->
-          <div>
-            <label for="subject" class="sr-only">Subject</label>
-            <input type="text" id="subject" placeholder="Subject"
-              class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2" />
-          </div>
-
-          <!-- Message Input -->
-          <div>
-            <label for="message" class="sr-only">Message</label>
-            <textarea id="message" placeholder="Message" rows="4"
-              class="w-full border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2"></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <div class="flex justify-center md:justify-start">
-            <button type="submit"
-              class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition w-full md:w-auto">
-              Send Message
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Footer Section -->
-  <footer class="bg-black text-white w-full sm:p-6">
-    <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-12">
-      <!-- Left Section -->
-      <div class="col-span-1">
-        <div class="mb-4">
-          <img src="./assets/img/DuoDevLogo.png" alt="Logo" class="h-16" />
-        </div>
-        <h2 class="text-xl font-semibold mb-2">
-          We grow your business with customized digital solutions
-        </h2>
-        <p class="text-gray-400 mb-4">Duo Dev Technologies, Since 2022</p>
-        <address class="not-italic text-gray-400 text-sm leading-6">
-          3rd Floor, Incubation Centre,<br />
-          Erode Sengunthar Engineering College,<br />
-          Thudupathi, Perundurai, Tamil Nadu - 638057
-        </address>
-        <!-- <div class="mt-6">
-        <img src="assets/img/DuoDevLogo.png" alt="MSME Logo" class="h-12" />
-      </div> -->
-      </div>
-
-      <!-- Links Section -->
-      <div class="md:col-span-3 sm:p-16">
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          <!-- Company Links -->
-          <div>
-            <h3 class="font-semibold mb-4">Company</h3>
-            <ul class="space-y-2 text-gray-400">
-              <li><a href="#" class="hover:text-white">About Us</a></li>
-              <li><a href="#" class="hover:text-white">Services</a></li>
-              <li><a href="#" class="hover:text-white">Products</a></li>
-              <li><a href="#" class="hover:text-white">Careers</a></li>
-              <li><a href="#" class="hover:text-white">Our Team</a></li>
-              <li><a href="#" class="hover:text-white">Contact Us</a></li>
-              <li><a href="#" class="hover:text-white">FAQ</a></li>
-            </ul>
-          </div>
-
-          <!-- Resources Links -->
-          <div>
-            <h3 class="font-semibold mb-4">Resources</h3>
-            <ul class="space-y-2 text-gray-400">
-              <li><a href="#" class="hover:text-white">ERP Documentation</a></li>
-              <li><a href="#" class="hover:text-white">Blog</a></li>
-            </ul>
-          </div>
-
-          <!-- Legal Links -->
-          <div>
-            <h3 class="font-semibold mb-4">Legal</h3>
-            <ul class="space-y-2 text-gray-400">
-              <li><a href="#" class="hover:text-white">Disclaimer</a></li>
-              <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-              <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="border-t border-gray-700 mt-8">
-      <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
-        <a href="https://duodev.in/">
-          <p class="text-gray-400 text-sm text-center md:text-left">
-            &copy; 2024 Duo Dev Technologies
-          </p>
-        </a>
-        <div class="flex space-x-4 mt-4 md:mt-0 justify-center">
-          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-x-twitter"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  </header>
+</div>
+  
+ 
 
 </body>
+
+<!-- JavaScript for Navbar Toggle -->
+<script>
+  const updateNavbarDisplay = () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const desktopMenu = document.getElementById("desktop-menu");
+    const isSmallScreen = window.innerWidth < 1300;
+
+    if (isSmallScreen) {
+        desktopMenu.style.display = "none"; // Hide desktop menu
+        menuToggle.style.display = "block"; // Show toggle button
+    } else {
+        desktopMenu.style.display = "flex"; // Show desktop menu
+        menuToggle.style.display = "none"; // Hide toggle button
+    }
+};
+
+// Run function on page load & window resize
+window.addEventListener("load", updateNavbarDisplay);
+window.addEventListener("resize", updateNavbarDisplay);
+
+
+// Run on page load and resize
+window.addEventListener("load", updateNavbarDisplay);
+window.addEventListener("resize", updateNavbarDisplay);
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const closeMenu = document.getElementById("close-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", function () {
+            mobileMenu.classList.remove("hidden");
+        });
+
+        closeMenu.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+  
+  
+  const updateNavbarPosition = () => {
+  const navbar = document.getElementById('navbar');
+  const navLinks = navbar.querySelectorAll('a');
+  const companyName = navbar.querySelector('h1');
+  const menuToggle = document.getElementById('menu-toggle');
+  const isDesktop = window.innerWidth > 768; // Adjust breakpoint if needed
+
+  // Check scroll position
+  if (window.scrollY > 50) {
+    navbar.classList.add('fixed', 'top-0', 'left-0', 'right-0', 'bg-sky-200');  
+    navbar.classList.remove('mt-0');  
+    companyName.style.color = 'black';
+    menuToggle.style.color = 'black';
+    
+    navLinks.forEach(link => {
+      link.style.color = isDesktop ? 'black' : 'white'; // Black for desktop, white for mobile
+    });
+
+  } else {
+    navbar.classList.remove('fixed', 'top-0', 'left-0', 'right-0', 'bg-sky-200'); 
+    navbar.classList.add('mt-0');  
+    companyName.style.color = 'white';
+    menuToggle.style.color = 'white';
+
+    navLinks.forEach(link => {
+      link.style.color = 'white'; 
+    });
+  }
+};
+
+
+
+  // Update navbar position on scroll
+  window.addEventListener('scroll', updateNavbarPosition);
+
+  // Handle navbar position on page load
+  window.addEventListener('load', updateNavbarPosition);
+
+  window.addEventListener('resize', updateNavbarPosition); 
+
+
+
+
+</script>
 
 </html>
