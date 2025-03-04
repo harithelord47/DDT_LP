@@ -1,91 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-900">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
 
-    <!-- Hero Section -->
-    <section class="bg-blue-600 text-white py-16 text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <h1 class="text-4xl font-bold">Join Our Team</h1>
-            <p class="mt-4 text-lg">
-                Explore exciting career opportunities and be part of a growing community.
-            </p>
-            <a href="#jobs" class="mt-6 inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
-                View Openings
-            </a>
-        </div>
-    </section>
+    <!-- Demo styles -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
 
-    <!-- Job Listings Section -->
-    <section id="jobs" class="py-16 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-semibold text-center mb-8">Current Openings</h2>
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
 
-            <!-- Job Listing Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Job Card -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <h3 class="text-xl font-semibold">Frontend Developer</h3>
-                    <p class="text-gray-600 mt-2">Full-time | Remote</p>
-                    <p class="text-gray-700 mt-4">We are looking for a skilled Frontend Developer to join our team.</p>
-                    <a href="#" class="mt-4 inline-block text-blue-600 font-semibold hover:underline">Apply Now</a>
-                </div>
+      .swiper {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+      }
 
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <h3 class="text-xl font-semibold">Backend Developer</h3>
-                    <p class="text-gray-600 mt-2">Full-time | Hybrid</p>
-                    <p class="text-gray-700 mt-4">We are seeking an experienced Backend Developer.</p>
-                    <a href="#" class="mt-4 inline-block text-blue-600 font-semibold hover:underline">Apply Now</a>
-                </div>
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <h3 class="text-xl font-semibold">UI/UX Designer</h3>
-                    <p class="text-gray-600 mt-2">Part-time | Remote</p>
-                    <p class="text-gray-700 mt-4">Creative UI/UX Designer needed to enhance user experience.</p>
-                    <a href="#" class="mt-4 inline-block text-blue-600 font-semibold hover:underline">Apply Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-    <!-- Why Join Us -->
-    <section class="py-16 bg-blue-100">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-semibold">Why Join Us?</h2>
-            <p class="mt-4 text-gray-700">
-                We provide a dynamic work environment, competitive salary, and opportunities for growth.
-            </p>
+      .swiper-button-next,
+      .swiper-button-prev {
+        position: absolute;
+        top: 50%;
+        background-color: #0984e2;
+        color: white;
+        padding: 5px;
+        border-radius: 100%;
+        transform:translateY(-50%);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+      }
 
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-blue-600">Flexible Work</h3>
-                    <p class="mt-2 text-gray-600">Choose remote, hybrid, or in-office work options.</p>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-blue-600">Career Growth</h3>
-                    <p class="mt-2 text-gray-600">We help employees upskill and develop their careers.</p>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-blue-600">Competitive Salary</h3>
-                    <p class="mt-2 text-gray-600">We offer industry-leading compensation and benefits.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        .swiper-button-next {
+            right: 15px;
+        }
 
-    <!-- Application CTA -->
-    <section class="py-16 text-center">
-        <h2 class="text-3xl font-semibold">Ready to Join?</h2>
-        <p class="mt-4 text-gray-700">Apply now and take your career to the next level!</p>
-        <a href="#" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-            Apply Now
-        </a>
-    </section>
+        .swiper-button-prev {
+            left: 15px;
+        }
 
-</body>
+      .swiper-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        
+      }
+
+      .swiper-slide{
+        width: 100%;
+        min-width: 100%;
+        height: 500px;
+      }
+
+      .swiper-pagination-bullet-active{
+        height: 3px;
+        width: 10px;
+        background-color:#ff0000;
+        display: inline-block;
+        margin: 0 5px;
+      }
+      
+      .swiper-pagination-bullet{
+        height: 3px;
+        min-width: 10px;
+        background-color:#000000;
+        display: inline-block;
+        margin: 0 5px;
+      }
+
+      .swiper-pagination{
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-button-next">
+        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 6L15 12L9 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="swiper-button-prev">
+        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6L9 12L15 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
 </html>
