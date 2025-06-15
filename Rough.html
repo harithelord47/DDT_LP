@@ -1,126 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <title>Swiper demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seamless JS Marquee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .marquee-wrapper {
+      overflow: hidden;
+      position: relative;
+      height: 5rem;
+    }
 
-    <!-- Demo styles -->
-    <style>
-        html,
-        body {
-            position: relative;
-            height: 100%;
-        }
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      will-change: transform;
+      width: max-content;
+    }
 
-        body {
-            background: #eee;
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-
-        .swiper {
-            width: 100%;
-            height: 100%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-    </style>
+    .marquee-track img {
+      max-width: 100px;
+      max-height: 100px;
+      object-fit: cover;
+    }
+  </style>
 </head>
+<body class="bg-gray-100">
 
-<body>
-    <!-- Swiper -->
-    <div class="swiper mySwiper overflow-x-hidden ">
-        <div class="swiper-wrapper gap-14">
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/tech_stack/ai.webp" alt="html">
-            </div>
-        </div>
+<div class="w-full my-10 p-4">
+  <!-- Row 1: Left Scroll -->
+  <div class="marquee-wrapper" data-direction="left" data-speed="0.3">
+    <div class="marquee-track">
+      <img src="./assets/tech_stack/shopify.webp" class="h-16" />
+      <img src="./assets/tech_stack/tailwind.webp" class="h-16" />
+      <img src="./assets/tech_stack/ai.webp" class="h-16" />
+      <img src="./assets/tech_stack/ps.webp" class="h-16" />
+      <img src="./assets/tech_stack/xd.webp" class="h-16" />
+      <img src="./assets/tech_stack/figma.webp" class="h-16" />
     </div>
+  </div>
 
-    <!-- Swiper JS -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+  <!-- Row 2: Right Scroll -->
+  <div class="marquee-wrapper mt-10" data-direction="right" data-speed="0.3">
+    <div class="marquee-track">
+      <img src="./assets/tech_stack/bootstrap.webp" class="h-16" />
+      <img src="./assets/tech_stack/jquery.webp" class="h-16" />
+      <img src="./assets/tech_stack/laravel.webp" class="h-16" />
+      <img src="./assets/tech_stack/mysql.webp" class="h-16" />
+      <img src="./assets/tech_stack/php.webp" class="h-16" />
+      <img src="./assets/tech_stack/react.webp" class="h-16" />
+    </div>
+  </div>
+</div>
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 5,
-            spaceBetween: 30,
-            loop: true,
-            freeMode: true,
-            autoplay: {
-                delay: 1000,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 50,
-                },
-            },
+<script>
+  document.querySelectorAll('.marquee-wrapper').forEach(container => {
+  const track = container.querySelector('.marquee-track');
+  const speed = parseFloat(container.dataset.speed) || 0.5;
+  const direction = container.dataset.direction === 'right' ? 1 : -1;
 
-        });
-    </script>
+  const images = Array.from(track.children);
+  let contentWidth = track.scrollWidth;
+  const containerWidth = container.offsetWidth;
+
+  // Clone enough items to cover at least 2x container width
+  let cloneIndex = 0;
+  while (contentWidth < containerWidth * 2) {
+    const clone = images[cloneIndex % images.length].cloneNode(true);
+    track.appendChild(clone);
+    contentWidth = track.scrollWidth;
+    cloneIndex++;
+  }
+
+  let position = direction === 1 ? -contentWidth / 2 : 0;
+  let isPaused = false;
+
+  container.addEventListener('mouseenter', () => isPaused = true);
+  container.addEventListener('mouseleave', () => isPaused = false);
+
+  function animate() {
+    if (!isPaused) {
+      position += direction * speed;
+
+      if (direction === -1 && position <= -contentWidth / 2) {
+        position = 0;
+      } else if (direction === 1 && position >= 0) {
+        position = -contentWidth / 2;
+      }
+
+      track.style.transform = `translateX(${position}px)`;
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
+</script>
+
 </body>
-
 </html>
