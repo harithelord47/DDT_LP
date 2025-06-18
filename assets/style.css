@@ -8,6 +8,10 @@
 	box-sizing: border-box;
 }
 
+html.sr .load-hidden {
+	visibility: hidden;
+}
+
 #navbar {
 	transition: top 0.3s ease, background-color 0.3s ease, margin-top 0.3s ease;
 }
