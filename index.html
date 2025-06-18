@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="shortcut icon" href="./assets/DuoDevLogo.ico" type="image/x-icon">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-	<!-- Include Font Awesome for Icons -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden">
@@ -82,22 +82,46 @@
 
 	<!-- Hero Section -->
 	<section
-		class="bg-gradient-to-b from-blue-500 to-sky-300 flex flex-col md:flex-row items-center justify-between h-screen sm:rounded-br-[30%_50%] overflow-hidden relative">
-		<div class="flex-1 max-w-full md:max-w-[40%] p-8 md:p-12 z-10">
-			<h1 class="text-4xl md:text-5xl font-bold text-[#0984e2] mb-4">Duo Dev Technologies</h1>
-			<p class="text-lg text-gray-600 leading-relaxed">
-				Crafting stunning websites, apps, and digital designs that speak your brand’s language.
-				Let's build your next idea together.
+		class=" flex flex-col md:flex-row items-center justify-center text-center h-screen 	overflow-hidden relative">
+		<div class="z-10 px-6">
+			<p class="mt-4 text-xl md:text-2xl font-light drop-shadow text-[#000]">
+				Engineering excellence for web, mobile, and business.
 			</p>
+			<div class="mt-8 flex justify-center gap-4">
+				<a href="#start"
+					class="bg-white text-[#0984e2] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+					Start a Project
+				</a>
+			</div>
 		</div>
 
-		<!-- Video Section -->
-		<div class="top-0 right-0 w-[60vw] h-full overflow-hidden z-0">
-			<video autoplay muted loop playsinline poster="./assets/img/fallback.png" id="hero-video"
-				class="w-full h-full object-cover object-left">
-				<source src="./assets/video/design_carousel.webm" type="video/webm" />
-				<img src="./assets/img/fallback.png" alt="Carousel Preview" />
-			</video>
+		<!-- SVG Parallax Background Layers -->
+		<div class="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none">
+			<svg viewBox="0 0 900 600" class="w-full h-auto" id="hero-svg">
+				<rect x="0" y="0" width="900" height="600" fill="#0984e2"></rect>
+				<path class="rellax" data-rellax-speed="-1"
+					d="M0 411L129 381L257 369L386 384L514 407L643 360L771 421L900 437L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
+					fill="#b0e6ff"></path>
+				<path class="rellax" data-rellax-speed="-2"
+					d="M0 460L129 446L257 479L386 400L514 462L643 466L771 421L900 447L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
+					fill="#87cff8"></path>
+
+				<!-- ADD the BRANDING TEXT -->
+				<text x="50%" y="55%" text-anchor="middle" fill="#fff" font-size="48" font-weight="bold"
+					font-family="Arial, sans-serif" class="rellax" data-rellax-speed="-1">
+					Duo Dev Technologies™
+				</text>
+
+				<path class="rellax" data-rellax-speed="-3"
+					d="M0 502L129 459L257 506L386 437L514 442L643 440L771 493L900 478L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
+					fill="#5eb7f2"></path>
+				<path class="rellax" data-rellax-speed="-4"
+					d="M0 517L129 527L257 532L386 511L514 533L643 497L771 481L900 491L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
+					fill="#369eeb"></path>
+				<path class="rellax" data-rellax-speed="-5"
+					d="M0 549L129 543L257 531L386 546L514 536L643 537L771 563L900 557L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
+					fill="#0984e2"></path>
+			</svg>
 		</div>
 	</section>
 
@@ -1296,10 +1320,11 @@
 		// toggle button
 		document.addEventListener("DOMContentLoaded", function () {
 
-			const video = document.getElementById('hero-video');
-			video.playbackRate = 0.4;
-			video.addEventListener('contextmenu', (e) => e.preventDefault());
-
+			new Rellax('.rellax', {
+				center: false,
+				vertical: true,
+				horizontal: false
+			});
 
 			const menuToggle = document.getElementById("menu-toggle");
 			const mobileMenu = document.getElementById("mobile-menu");

@@ -194,7 +194,6 @@ body {
 	object-fit: cover;
 }
 
-#hero-video {
-	mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
-	-webkit-mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+#hero-svg path {
+	will-change: transform;
 }
