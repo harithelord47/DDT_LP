@@ -16,6 +16,10 @@ html.sr .load-hidden {
 	transition: top 0.3s ease, background-color 0.3s ease, margin-top 0.3s ease;
 }
 
+.dropdown-menu {
+	min-width: 160px;
+}
+
 /* Testimonial Section */
 html,
 body {

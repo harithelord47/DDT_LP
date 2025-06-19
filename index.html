@@ -21,16 +21,18 @@
 	</div>
 
 	<!-- Navbar Section -->
-	<div class="w-full fixed top-0 z-50 bg-[#0984e2] mt-0" id="navbar">
-		<header class=" flex items-center justify-between px-4 py-4 md:px-8">
+	<div class="w-full fixed top-0 z-50 bg-[#0984e2] mt-0 transition-colors duration-300" id="navbar">
+		<header class="flex items-center justify-between p-4 md:px-8">
 			<!-- Logo -->
 			<div class="flex items-center" id="nav-text">
 				<img loading="lazy" src="./assets/img/DuoDevLogo.webp" class="h-14 w-14 rounded-lg" alt="Duo Dev Logo">
-				<h1 class="text-white text-xl font-bold ml-2 px-2 uppercase">Duo Dev <br> Technologies</h1>
+				<h1 class="text-white text-xl font-bold ml-2 px-2 uppercase transition-colors duration-300">Duo Dev <br>
+					Technologies</h1>
 			</div>
 
 			<!-- Hamburger Menu (Mobile) -->
-			<button id="menu-toggle" class="block md:hidden text-white focus:outline-none"
+			<button id="menu-toggle"
+				class="block lg:hidden text-white focus:outline-none transition-colors duration-300"
 				aria-label="Toggle Navigation">
 				<svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
 					stroke="currentColor">
@@ -39,13 +41,12 @@
 			</button>
 
 			<!-- Navigation Menu -->
-			<nav id="nav-menu" class="text-sm hidden md:flex flex-col md:flex-row md:space-x-12 text-white font-medium">
-				<ul class="flex flex-col md:flex-row md:space-x-12 text-center md:text-left space-y-2 md:space-y-0">
+			<nav id="nav-menu" class="text-sm hidden lg:flex flex-col lg:flex-row lg:space-x-12 text-white font-medium">
+				<ul class="flex flex-col lg:flex-row lg:space-x-12 text-center lg:text-left space-y-2 lg:space-y-0">
 					<li><a href="#" class="hover:text-gray-300">Home</a></li>
 					<li><a href="#" class="hover:text-gray-300">About Us</a></li>
 					<li><a href="#" class="hover:text-gray-300">Services</a></li>
 					<li><a href="#" class="hover:text-gray-300">Products</a></li>
-					<li><a href="#" class="hover:text-gray-300">Clients</a></li>
 					<li><a href="https://duodev.in/blog" class="hover:text-gray-300">Blogs</a></li>
 					<li><a href="https://duodev.in/careers" class="hover:text-gray-300">Careers</a></li>
 					<li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
@@ -54,7 +55,7 @@
 
 			<!-- Get a Quote Button -->
 			<button
-				class="bg-white hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full hidden sm:flex items-center space-x-2 mt-4 md:mt-0">
+				class="bg-white hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full hidden lg:flex items-center space-x-2 mt-4 lg:mt-0">
 				<span>Get a Quote</span>
 				<div class="bg-black p-3 rounded-full opacity-80">
 					<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,25 +67,41 @@
 			</button>
 			<!-- Mobile Menu with Backdrop Blur -->
 			<div id="mobile-menu"
-				class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 text-white text-lg">
+				class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 text-white text-lg lg:hidden">
 				<button id="close-menu" class="absolute top-6 right-6 text-white text-4xl">&times;</button>
 				<a href="#" class="hover:text-gray-300">Home</a>
 				<a href="#" class="hover:text-gray-300">About Us</a>
 				<a href="#" class="hover:text-gray-300">Services</a>
 				<a href="#" class="hover:text-gray-300">Products</a>
-				<a href="#" class="hover:text-gray-300">Clients</a>
 				<a href="https://duodev.in/blog" class="hover:text-gray-300">Blogs</a>
 				<a href="https://duodev.in/careers" class="hover:text-gray-300">Careers</a>
 				<a href="#" class="hover:text-gray-300">Contact Us</a>
+
+				<!-- Get a Quote button -->
+				<button
+					class="bg-white hover:bg-gray-200 text-gray-800 text-md font-medium py-1 ps-4 pe-2 rounded-full hidden sm:flex items-center space-x-2 mt-4 lg:mt-0">
+					<span>Get a Quote</span>
+					<div class="bg-black p-3 rounded-full opacity-80">
+						<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M4.77617 0.557047L4.77635 0.556998C5.23222 0.432457 5.70713 0.651856 5.9089 1.07248L5.93124 1.12609L7.33391 4.4925L7.33398 4.49268C7.4996 4.88968 7.38539 5.34746 7.05119 5.62069C7.05118 5.62069 7.05118 5.6207 7.05117 5.6207L5.32239 7.03388L5.06356 7.24546L5.20651 7.54766C6.41652 10.1058 8.4873 12.1765 11.0454 13.3866L11.3472 13.5293L11.5589 13.2711L12.9755 11.5423L12.9756 11.5423L12.9771 11.5404C13.2458 11.2087 13.7058 11.093 14.1039 11.2591L14.1041 11.2592L17.4705 12.6618L17.4714 12.6622C17.9239 12.8495 18.1654 13.3434 18.0361 13.8167L18.036 13.8169L17.1947 16.9016C17.1947 16.9018 17.1946 16.902 17.1946 16.9022C17.0768 17.328 16.6905 17.6222 16.2533 17.6222C7.81384 17.6222 0.970835 10.7792 0.970835 2.33979C0.970835 1.90254 1.26507 1.5162 1.69097 1.39847C1.69114 1.39842 1.69132 1.39837 1.69149 1.39832L4.77617 0.557047Z"
+								stroke="white" stroke-width="0.855" />
+						</svg>
+					</div>
+				</button>
 			</div>
 		</header>
 	</div>
 
 	<!-- Hero Section -->
 	<section
-		class=" flex flex-col md:flex-row items-center justify-center text-center h-screen 	overflow-hidden relative">
-		<div class="z-10 px-6">
-			<p class="mt-4 text-xl md:text-2xl font-light drop-shadow text-[#000]">
+		class="relative flex flex-col md:flex-row items-center justify-center text-center overflow-hidden bg-[#0984e2] h-screen">
+		<!-- Foreground Text -->
+		<div class="z-20 px-6 max-w-3xl min-h-64">
+			<h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white drop-shadow mb-4">
+				Smarter Solutions to Boost Your Business with Duo Dev Technologies!
+			</h1>
+			<p class="mt-4 text-lg md:text-xl font-light drop-shadow text-white">
 				One Partner for all Your Digital Needs
 			</p>
 			<div class="mt-8 flex justify-center gap-4">
@@ -95,38 +112,26 @@
 			</div>
 		</div>
 
-		<!-- SVG Parallax Background Layers -->
-		<div class="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none">
-			<svg viewBox="0 0 900 600" class="w-full h-full" id="hero-svg">
-				<rect x="0" y="0" width="900" height="600" fill="#0984e2"></rect>
+		<!-- Parallax SVG Background -->
+		<div class="absolute bottom-0 left-0 w-full pointer-events-none z-10">
+			<svg viewBox="0 0 900 600" class="w-full h-full" id="hero-svg" preserveAspectRatio="xMidYMid slice">
+				<rect x="0" y="0" width="900" height="600" fill="#0984e2" />
 				<path class="rellax" data-rellax-speed="-1"
-					d="M0 411L129 381L257 369L386 384L514 407L643 360L771 421L900 437L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
-					fill="#b0e6ff"></path>
+					d="M0 411L129 381L257 369L386 384L514 407L643 360L771 421L900 437L900 601L0 601Z" fill="#b0e6ff" />
 				<path class="rellax" data-rellax-speed="-2"
-					d="M0 460L129 446L257 479L386 400L514 462L643 466L771 421L900 447L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
-					fill="#87cff8"></path>
-
-				<!-- ADD the BRANDING TEXT -->
-				<text x="50%" y="55%" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold"
-					font-family="Arial, sans-serif" class="rellax" data-rellax-speed="-1">
-					Smarter Solutions to Boost Your Business with Duo Dev Technologies!
-				</text>
-
+					d="M0 460L129 446L257 479L386 400L514 462L643 466L771 421L900 447L900 601L0 601Z" fill="#87cff8" />
 				<path class="rellax" data-rellax-speed="-3"
-					d="M0 502L129 459L257 506L386 437L514 442L643 440L771 493L900 478L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
-					fill="#5eb7f2"></path>
+					d="M0 502L129 459L257 506L386 437L514 442L643 440L771 493L900 478L900 601L0 601Z" fill="#5eb7f2" />
 				<path class="rellax" data-rellax-speed="-4"
-					d="M0 517L129 527L257 532L386 511L514 533L643 497L771 481L900 491L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
-					fill="#369eeb"></path>
+					d="M0 517L129 527L257 532L386 511L514 533L643 497L771 481L900 491L900 601L0 601Z" fill="#369eeb" />
 				<path class="rellax" data-rellax-speed="-5"
-					d="M0 549L129 543L257 531L386 546L514 536L643 537L771 563L900 557L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z"
-					fill="#0984e2"></path>
+					d="M0 549L129 543L257 531L386 546L514 536L643 537L771 563L900 557L900 601L0 601Z" fill="#0984e2" />
 			</svg>
 		</div>
 	</section>
 
 	<!-- Techstacks Section -->
-	<div class="w-screen max-w-screen py-20 bg-white">
+	<div class="w-screen py-20 bg-white overflow-hidden" style="max-width: 100vw;">
 		<!-- Row 1: Left Scroll -->
 		<div class="marquee-wrapper overflow-x-hidden relative" data-direction="left" data-speed="0.3">
 			<div class="marquee-track flex gap-20 w-max">
@@ -619,7 +624,8 @@
 					<!-- Point 2 -->
 					<div class="flex items-start space-x-4">
 						<div class="text-[#0984e2] text-3xl mr-3">
-							<img src="./assets/svg/why/lightbulb-filament-fill-svgrepo-com.svg" alt="icon1" class="h-12 w-12">
+							<img src="./assets/svg/why/lightbulb-filament-fill-svgrepo-com.svg" alt="icon1"
+								class="h-12 w-12">
 						</div>
 						<div>
 							<h3 class="text-lg font-semibold">Expertise and Innovation</h3>
@@ -753,7 +759,8 @@
 					</div>
 					<div>
 						<label for="message" class="text-sm">Message</label>
-						<textarea id="message" rows="2" class="w-full border-b border-gray-500 bg-gray-200 focus:border-[#0984e2] outline-none py-2 transition resize-none"></textarea>
+						<textarea id="message" rows="2"
+							class="w-full border-b border-gray-500 bg-gray-200 focus:border-[#0984e2] outline-none py-2 transition resize-none"></textarea>
 					</div>
 
 					<!-- Button -->
@@ -817,11 +824,12 @@
 						</ul>
 						<h3 class="font-semibold mb-4 mt-8">Products</h3>
 						<ul class="space-y-2 text-gray-400">
-							<li><a href="https://expenses.duodev.in/" target="_blank" class="hover:text-white">Expenses Tracker</a></li>
+							<li><a href="https://expenses.duodev.in/" target="_blank" class="hover:text-white">Expenses
+									Tracker</a></li>
 						</ul>
 					</div>
 
-				
+
 					<!-- Legal Links -->
 					<div>
 						<h3 class="font-semibold mb-4 mt-2 ">Legal</h3>
@@ -908,22 +916,22 @@
 			const navLinks = navbar.querySelectorAll('a');
 			const companyName = navbar.querySelector('h1');
 			const menuToggle = document.getElementById('menu-toggle');
-			const isDesktop = window.innerWidth > 768; // Adjust breakpoint if needed
+			const isDesktop = window.innerWidth >= 1024;
 
 			// Check scroll position
 			if (window.scrollY > 50) {
-				navbar.classList.add('fixed', 'top-0', 'left-0', 'right-0', 'bg-sky-200');
-				navbar.classList.remove('mt-0');
+				navbar.classList.add('bg-sky-200');
+				navbar.classList.remove('mt-0', 'bg-[#0984e2]');
 				companyName.style.color = 'black';
 				menuToggle.style.color = 'black';
 
 				navLinks.forEach(link => {
-					link.style.color = isDesktop ? 'black' : 'white'; // Black for desktop, white for mobile
+					link.style.color = isDesktop ? 'black' : 'white';
 				});
 
 			} else {
-				navbar.classList.remove('fixed', 'top-0', 'left-0', 'right-0', 'bg-sky-200');
-				navbar.classList.add('mt-0');
+				navbar.classList.remove('bg-sky-200');
+				navbar.classList.add('mt-0', 'bg-[#0984e2]');
 				companyName.style.color = 'white';
 				menuToggle.style.color = 'white';
 
